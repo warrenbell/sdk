@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <artifactId>cloudcms-sdk-sample</artifactId>
+    <groupId>org.gitana</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+    <name>Cloud SDK Sample App</name>
+    <packaging>war</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>7.0.1.v20091125</version>
+                <configuration>
+                    <scanIntervalSeconds>1</scanIntervalSeconds>
+                    <stopPort>29964</stopPort>
+                    <stopKey>foo</stopKey>
+                    <webAppConfig>
+                        <contextPath>/</contextPath>
+                    </webAppConfig>
+                    <connectors>
+                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                            <port>18081</port>
+                        </connector>
+                    </connectors>
+                    <scanTargets>
+                        <scanTarget>src/main/webapp</scanTarget>
+                    </scanTargets>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <!-- Gitana Proxy Servlet -->
+        <dependency>
+            <groupId>org.gitana</groupId>
+            <artifactId>gitana-servlets</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    <properties>
+        <jquery.version>1.5</jquery.version>
+        <jquery.ui.version>1.8.8</jquery.ui.version>
+        <jquery.mobile.version>1.0a3</jquery.mobile.version>
+        <alpaca.version>1.0.0-SNAPSHOT</alpaca.version>
+        <ratchet.version>1.0.0-SNAPSHOT</ratchet.version>
+        <gitana.driver.version>1.0.0-SNAPSHOT</gitana.driver.version>
+        <spring.version>3.0.5.RELEASE</spring.version>
+        <spring.security.version>3.1.0.RC1</spring.security.version>
+        <cloudcms.host>api.dev.gitanacloud.com</cloudcms.host>
+        <cloudcms.port>80</cloudcms.port>
+        <gitana.lib>http://code.cloudcms.com/gitana-javascript-driver/${gitana.driver.version}/gitana.min.js
+        </gitana.lib>
+        <alpaca.lib>http://code.cloudcms.com/alpaca/js/alpaca-${alpaca.version}.min.js</alpaca.lib>
+        <alpaca.css>http://code.cloudcms.com/alpaca/css/alpaca-${alpaca.version}.min.css</alpaca.css>
+        <ratchet.lib>http://code.cloudcms.com/ratchet/${ratchet.version}/ratchet-${ratchet.version}.min.js</ratchet.lib>
+        <ratchet.plugins>http://code.cloudcms.com/ratchet/${ratchet.version}/plugins</ratchet.plugins>
+    </properties>
+</project>

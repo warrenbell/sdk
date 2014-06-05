@@ -1,0 +1,9 @@
+{
+    "name": "cloudcms-sdk-website-dynamic",
+    "description": "Sample Web Content Management web site",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "cloudcms-server": "*"
+    }
+}

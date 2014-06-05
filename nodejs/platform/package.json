@@ -1,0 +1,10 @@
+{
+    "name": "cloudcms-sdk-helloworld",
+    "description": "Hello World sample application from the Cloud CMS SDK",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "express": "3.x.x",
+        "gitana": "*"
+    }
+}

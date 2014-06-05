@@ -1,0 +1,9 @@
+{
+    "name": "cloudcms-sdk-website-static",
+    "description": "Sample website that serves a public website using the Cloud CMS Server Module",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "cloudcms-server": "*"
+    }
+}
