@@ -1,0 +1,1 @@
+This sample demonstrates how to use Cloud CMS signin providers to hook authentication to third-party services like Facebook, Twitter and LinkedIn.

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>My Company</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="<c:url value="css/base.css"/>"/>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="text-align: center">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                Pick a method for logging in:
+
+                <form method="post" action="/proxy/signin/facebook">
+                    <button type="submit">Facebook</button>
+                </form>
+                <form method="post" action="/proxy/signin/twitter">
+                    <button type="submit">Twitter</button>
+                </form>
+                <form method="post" action="/proxy/signin/linkedin">
+                    <button type="submit">LinkedIn</button>
+                </form>
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
