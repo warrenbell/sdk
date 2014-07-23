@@ -1,0 +1,9 @@
+{
+    "name": "cloudcms-sdk-social-example",
+    "description": "Simple example that demonstrates SSO integration via social systems",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "cloudcms-server": "*"
+    }
+}

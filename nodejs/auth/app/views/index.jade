@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  br
+  br
+
+  if !user
+    a(href="/login") Login
+
+  if user
+    a(href="/logout") Logout
+
+    h2 User Profile
+    p name #{user.name}
+    p firstName #{user.firstName}
+    p lastName #{user.lastName}
+
+    h2 Facebook Profile
+    if hasFacebookProfile
+      pre #{facebookProfile}
+    else
+      a(href="/auth/facebook") Add Facebook Account
+
+    h2 Twitter Profile
+    if hasTwitterProfile
+      pre #{twitterProfile}
+    else
+      a(href="/auth/twitter") Add Twitter Account
+
+    h2 LinkedIn Profile
+    if hasLinkedinProfile
+      pre #{linkedinProfile}
+    else
+      a(href="/auth/linkedin") Add Linked In Account
