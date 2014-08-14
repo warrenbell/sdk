@@ -30,7 +30,11 @@ block content
       a(href="/auth/twitter") Add Twitter Account
 
     h2 LinkedIn Profile
-    if hasLinkedinProfile
-      pre #{linkedinProfile}
+    if hasLinkedInProfile
+      pre #{linkedInProfile}
     else
       a(href="/auth/linkedin") Add Linked In Account
+
+  if ticket
+    h2 Ticket
+    p #{ticket}

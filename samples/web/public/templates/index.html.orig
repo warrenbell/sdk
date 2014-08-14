@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="utf-8">
+<title>Delray Beach</title>
+<meta name="title" content="Solocal Mobile Apps for Multifamily and Hospitality" />
+<meta name="description" content="Solocal video tutorials are a great way to get started." />
+<meta name="google-site-verification" content="GvLE9HwTTm2qe_Z62ZhM9UcmwNQYLab1aRshTvyyOE8" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts (more: http://www.google.com/fonts) -->
+<!-- Main Font -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<!-- Headings -->
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<!-- Handwritten -->
+<link href="http://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+<!-- Countdown, Pricing Table Price Tag -->
+<link href="http://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+<!-- Logo -->
+<link href="http://fonts.googleapis.com/css?family=Cantora+One" rel="stylesheet" type="text/css">
+
+<!-- CDN Bootstrap & FontAwesome -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- CSS Libraries -->
+<link href="assets/css/animate.min.css" rel="stylesheet">
+<link href="assets/css/bxslider.css" rel="stylesheet">
+<link href="assets/css/magnific-popup.css" rel="stylesheet">
+
+<!-- Theme Specific CSS -->
+<link href="assets/css/styles.css" rel="stylesheet">
+<link href="assets/css/custom.css" rel="stylesheet">
+
+<!-- Predefined Color Scheme -->
+<link href="assets/css/colors/default.css" rel="stylesheet" id="colors">
+
+<!-- LESS - Development Only
+<link href="assets/less/styles.less" rel="stylesheet/less" />
+<script>less = { env: 'development' };</script>
+<script src="assets/js/less.js"></script>
+-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+<link href="assets/css/ie8.css" rel="stylesheet"></link>
+<![endif]-->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40899192-1', 'solocal.mobi');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+
+<header id="header" class="navbar">
+
+  <div class="container">
+    <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	    	<span class="sr-only">Skip navigation</span>
+	    	<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+		  </button> 
+	    <a class="navbar-brand logo" href="index.html"><img src="img/logo.gif"  alt="DDA" ></a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+	    <ul class="nav navbar-nav">
+	    	
+	    	<li><a href="#">RESOURCE GUIDE</a></li>
+	    	
+	    	
+	    	<li class="dropdown">
+	    		<a href="#">LOCAL INFORMATION</a>
+	    		<ul class="dropdown-menu">
+	    			<li><a href="#">ABOUT DDA</a></li>
+	    			<li><a href="#">CITY OF DELRAY BEACH</a></li>
+	    			<li><a href="#">GETTING AROUND</a></li>
+	    			<li><a href="#">REAL ESTATE</a></li>
+	    			<li><a href="#">PARKING</a></li>
+	    			
+	    		</ul>
+	    	</li>
+  			<li><a href="#contact" data-toggle="modal">CONTACT US</a></li>
+  			
+    </nav>
+    
+  </div>
+
+</header><!-- .navbar-fixed-top -->
+
+<div id="carousel" class="carousel slide">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    
+    <div class="item active">
+	    <img src="slides/beach_a.jpg" class="animated fadeIn 050s" alt="" />
+	    <div class="carousel-content">
+	      <div class="container">
+		      <h1 class="carousel-header color animated bounceInDown delay075s">Delray Beach</h1><br />
+		      <div class="carousel-body">
+			      <ul>
+				      <li class="light animated bounceInLeft delay2s"><strong>Local Resources</strong> </li>
+				      <li class="light animated bounceInRight delay250s">Community Guides</li>
+			     
+			      </ul>
+		      </div>
+	      </div>
+	    </div>
+	  </div>
+	  
+	  <div class="item">
+	    <img src="slides/beach_b.jpg" class="animated fadeIn 050s" alt="" />
+	    <div class="carousel-caption animated fadeInUp delay050s">
+	      <div class="container">
+	      	<h3 class="carousel-header">"Best of the Road - Most Fun Small Town in America"</h3>
+	        <p class="carousel-body"><em>by Rand McNally & USA Today</em></p>
+	      </div>
+	    </div>
+	  </div>
+
+
+	  <div class="item">
+	    <img src="slides/beach_a.jpg" class="animated fadeIn 050s" alt="" />
+	  <div class="carousel-content">
+	      <div class="container">
+		      <h1 class="carousel-header color animated bounceInDown delay075s">Market Your Property</h1><br />
+		      <div class="carousel-body">
+			      <ul>
+				   <li class="light animated bounceInLeft delay2s">Improve Prospect Conversions</li>
+			      <li class="light animated bounceInRight delay250s">Increase Retention</li>
+			      <li class="light animated bounceInDown delay3s">Strengthen Your Community</li>				      
+			      <li class="light animated bounceInUp delay3s"><strong>Stay Mobile First</strong></li>
+			      </ul>
+			  </div>
+			</div>
+		</div>
+</div>
+
+
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel" data-slide="prev">
+    <i class="icon-angle-left"></i>
+  </a>
+  <a class="right carousel-control" href="#carousel" data-slide="next">
+    <i class="icon-angle-right"></i>
+  </a>
+  
+</div><!-- .carousel -->
+  
+<div class="container" id="main">
+
+
+<br><br><br>
+	<h3 class="hr2 text-center">Village by the Sea</h3>
+
+	<div class="iconbox section-small">
+		<div class="row">
+			<div class="col-lg-4">
+				<i class="icon-calendar icon-2x"></i>
+				<h5 class="header"><a href="create.html">Event Calendar</a></h5>
+				<p class="lead">
+					You select the Content. You publish the Content. You own it and control it. We don't know what's in your area. But we do give you the tools to leverage it.
+				</p>
+				
+			</div>
+			<div class="col-lg-4">
+				<i class="icon-share icon-2x"magic></i>
+				<h5 class="header"><a href="distribution.html">Visiting Downtown</a></h5>
+				<p class="lead">
+					Our HTML5 Web-Based Apps offer multiple options for effective distribution. Compatibility with all mobile devices makes your local content more engaging.
+				</p>
+				
+			</div>
+			<div class="col-lg-4">
+				<i class="icon-bar-chart icon-2x"></i>
+				<h5 class="header"><a href="analytics.html">Living Downtown</a></h5>
+				<p class="lead">
+					Publishing Mobile Apps without truly measuring the appeal of your content is futile. We report each interaction with each content element.
+				</p>
+				
+			</div>
+		</div>
+	</div>
+	
+
+
+<div class="team section-base">
+	
+	<div class="row">
+		
+		<div class="col-sm-4">
+			<div class="profile">
+				<img src="img/community_a.jpg" alt="" />
+				<div class="details">
+					<h5 class="name">Event Calendar</h5>
+					<div class="position">Best Information Source</div>
+					<p class="description">
+						Local Management and Staff are always the best source of information for your audience. Why? They live there!
+					</p>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-sm-4">
+			<div class="profile">
+				<img src="img/community_a.jpg" alt="" />
+				<div class="details">
+					<h5 class="name">Weddings</h5>
+					<div class="position">Your Assets - Leverage Them</div>
+					<p class="description">
+						Each property is different. The community and culture are fertile with unique resources and services.
+					</p>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-sm-4">
+			<div class="profile">
+				<img src="img/mobile_a.jpg" alt="" />
+				<div class="details">
+					<h5 class="name">Our Sponsors</h5>
+					<div class="position">Sales - Retention - Loyalty</div>
+					<p class="description">
+						Providing your residents or guests with the very best local information builds loyalty and increases retention.
+					</p>
+					
+				</div>
+			</div>
+		</div>
+	
+	</div>	
+</div>
+
+
+
+
+</div><!-- .container -->
+
+<footer id="footer">
+
+	<br>
+
+	<div class="footer-top">
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-md-4">
+					<div class="row social-networks">
+						<a href="#"><i class="icon-facebook"></i></a>
+						<a href="#"><i class="icon-twitter"></i></a>
+						<a href="#"><i class="icon-instagram"></i></a>
+						<a href="#"><i class="icon-youtube"></i></a>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<h6 class="title">About</h6>
+					<p>
+						Solocal develops and provides Mobile Apps as a Service to the Hospitality and Multifamily markets. Our Best of Breed, Two-Tier White Label platform enables a new era of mobile content marketing.
+					</p>
+				</div>  
+				
+				<div class="col-md-4">
+					<h6 class="title">Get in Touch</h6>
+					<address>
+						
+						<i class="icon-envelope"></i> <a href="mailto:info@solocal.mobi" data-toggle="tooltip" title="Email Us">info@solocal.mobi</a><br />
+						<i class="icon-phone"></i> 704.780.6682<br />
+					</address>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<div class="container footer-bottom">
+		<div class="footer-copyright">
+			<p>&copy; 2014 Solocal Mobile</p>
+		</div>
+	</div>
+	
+</footer>
+
+<a href="#" id="scrollToTop">
+	<i class="icon-angle-up icon-2x"></i>
+</a>
+
+<!-- Contact Popup (Modal) -->
+<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">We would love to hear from you</h4>
+      </div>
+      <div class="modal-body">
+
+				<p>
+					To schedule a demonstration or for general inquiries, we respond within 1 business day. If you require immediate assistance, just give us a call, <strong>704.780.6682</strong>
+				</p>
+				<p>
+					We take privacy seriously. Your information is never shared, period.
+				</p>
+
+				<div id="wufoo-zszo180036nfc5">
+<a href="https://solocal.wufoo.com/forms/zszo180036nfc5"></a>.
+</div>
+
+
+				<div class="row">
+					<div class="col-sm-6">
+						<h4 class="invert">Solocal Mobile, Inc.</h4>
+						<address>
+							
+							<i class="icon-envelope"></i> <a href="mailto:info@solocal.mobi" data-toggle="tooltip" title="Email Us"> info@solocal.mobi</a><br />
+							<i class="icon-phone"></i> 704.780.6682<br />
+						</address>		
+					</div>
+					<div class="col-sm-6">
+						<h5 class="hr2 margin-bottom-base text-muted"><i class="icon-time"></i> Business Hours</h5>
+						<p class="lead">
+							<span class="color">Mon - Fri:</span> <span class="text-muted">8:30am to 5:30 <i>Eastern</i></span><br />
+							
+						</p>
+					</div>
+				</div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript Libraries & jQuery Plugins -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.bxslider.min.js"></script>
+<script src="assets/js/jquery.isotope.min.js"></script>
+<script src="assets/js/jquery.fittext.js"></script>
+<script src="assets/js/jquery.fitvids.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/jquery.hoverdir.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/js/theme.js"></script>
+
+<script type="text/javascript">var zszo180036nfc5;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'solocal',
+'formHash':'zszo180036nfc5',
+'autoResize':true,
+'height':'777',
+'async':true,
+'host':'wufoo.com',
+'header':'hide',
+'ssl':true};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { zszo180036nfc5 = new WufooForm();zszo180036nfc5.initialize(options);zszo180036nfc5.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>
+
+</body>
+</html>

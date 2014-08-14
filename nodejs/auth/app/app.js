@@ -14,7 +14,8 @@ var config = {
             "failureRedirect": "/",
             "autoRegister": true,
             "appId": "653450864732491",
-            "appSecret": "cb5ab62617cd5f893cd5cc22e9af4698"
+            "appSecret": "cb5ab62617cd5f893cd5cc22e9af4698",
+            "passTicket": true
         },
         "twitter": {
             "enabled": true,
@@ -23,7 +24,8 @@ var config = {
             "failureRedirect": "/",
             "autoRegister": true,
             "consumerKey": "4w8HaiTLGtK1deJRGEnItkJal",
-            "consumerSecret": "iCMst3zaO2hd9QNlJsG8Ys0aa8PZDU5sr04f43iNhZeP5UWFeQ"
+            "consumerSecret": "iCMst3zaO2hd9QNlJsG8Ys0aa8PZDU5sr04f43iNhZeP5UWFeQ",
+            "passTicket": true
         },
         "linkedin": {
             "enabled": true,
@@ -32,7 +34,8 @@ var config = {
             "failureRedirect": "/",
             "autoRegister": true,
             "apiKey": "75ej4yzkby2ak4",
-            "apiSecret": "1Mc61SMqm1lQuAwB"
+            "apiSecret": "1Mc61SMqm1lQuAwB",
+            "passTicket": true
         }
     }
 };
@@ -43,28 +46,39 @@ server.routes(function(app, config) {
     // index page
     app.get("/", function(req, res) {
 
+        // was ticked handed back
+        var ticket = req.param("ticket");
+        if (ticket)
+        {
+            req.session.ticket = ticket;
+            res.redirect("/");
+            return;
+        }
+
         var facebookProfile = "";
         var hasFacebookProfile = false;
         var twitterProfile = "";
         var hasTwitterProfile = false;
-        var linkedinProfile = "";
+        var linkedInProfile = "";
         var hasLinkedInProfile = false;
 
-        if (req.session.user)
+        if (req.session.user && req.session.user.profiles)
         {
-            if (req.session.user.facebookProfile)
+            console.log(JSON.stringify(req.session.user.profiles));
+
+            if (req.session.user.profiles.facebook)
             {
-                facebookProfile = JSON.stringify(req.session.user.facebookProfile, null, "  ");
+                facebookProfile = JSON.stringify(req.session.user.profiles.facebook, null, "  ");
                 hasFacebookProfile = true;
             }
-            if (req.session.user.twitterProfile)
+            if (req.session.user.profiles.twitter)
             {
-                twitterProfile = JSON.stringify(req.session.user.twitterProfile, null, "  ");
+                twitterProfile = JSON.stringify(req.session.user.profiles.twitter, null, "  ");
                 hasTwitterProfile = true;
             }
-            if (req.session.user.linkedinProfile)
+            if (req.session.user.profiles.linkedin)
             {
-                linkedinProfile = JSON.stringify(req.session.user.linkedinProfile, null, "  ");
+                linkedInProfile = JSON.stringify(req.session.user.profiles.linkedin, null, "  ");
                 hasLinkedInProfile = true;
             }
         }
@@ -74,10 +88,11 @@ server.routes(function(app, config) {
             user: req.session.user,
             facebookProfile: facebookProfile,
             twitterProfile: twitterProfile,
-            linkedinProfile: linkedinProfile,
+            linkedInProfile: linkedInProfile,
             hasFacebookProfile: hasFacebookProfile,
             hasTwitterProfile: hasTwitterProfile,
-            hasLinkedInProfile: hasLinkedInProfile
+            hasLinkedInProfile: hasLinkedInProfile,
+            ticket: req.session.ticket
         });
     });
 
@@ -91,6 +106,7 @@ server.routes(function(app, config) {
     // logout page
     app.get("/logout", function(req, res) {
         delete req.session.user;
+        delete req.session.ticket;
         res.redirect("/");
     });
 
