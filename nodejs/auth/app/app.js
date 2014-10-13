@@ -61,25 +61,29 @@ server.routes(function(app, config) {
         var hasTwitterProfile = false;
         var linkedInProfile = "";
         var hasLinkedInProfile = false;
+        var avatarUrl = "";
 
-        if (req.session.user && req.session.user.profiles)
+        if (req.session.user)
         {
-            console.log(JSON.stringify(req.session.user.profiles));
+            avatarUrl = "/static/principal/" + req.session.user._doc + "/avatar";
 
-            if (req.session.user.profiles.facebook)
+            if (req.session.user.profiles)
             {
-                facebookProfile = JSON.stringify(req.session.user.profiles.facebook, null, "  ");
-                hasFacebookProfile = true;
-            }
-            if (req.session.user.profiles.twitter)
-            {
-                twitterProfile = JSON.stringify(req.session.user.profiles.twitter, null, "  ");
-                hasTwitterProfile = true;
-            }
-            if (req.session.user.profiles.linkedin)
-            {
-                linkedInProfile = JSON.stringify(req.session.user.profiles.linkedin, null, "  ");
-                hasLinkedInProfile = true;
+                if (req.session.user.profiles.facebook)
+                {
+                    facebookProfile = JSON.stringify(req.session.user.profiles.facebook, null, "  ");
+                    hasFacebookProfile = true;
+                }
+                if (req.session.user.profiles.twitter)
+                {
+                    twitterProfile = JSON.stringify(req.session.user.profiles.twitter, null, "  ");
+                    hasTwitterProfile = true;
+                }
+                if (req.session.user.profiles.linkedin)
+                {
+                    linkedInProfile = JSON.stringify(req.session.user.profiles.linkedin, null, "  ");
+                    hasLinkedInProfile = true;
+                }
             }
         }
 
@@ -92,7 +96,8 @@ server.routes(function(app, config) {
             hasFacebookProfile: hasFacebookProfile,
             hasTwitterProfile: hasTwitterProfile,
             hasLinkedInProfile: hasLinkedInProfile,
-            ticket: req.session.ticket
+            ticket: req.session.ticket,
+            avatarUrl: avatarUrl
         });
     });
 

@@ -1,0 +1,5 @@
+{
+    "_type": "guide:route",
+    "source": "content/cities/boston/node.json",
+    "target": "content/cities/nyc/node.json"
+}
