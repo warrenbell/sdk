@@ -1,0 +1,99 @@
+{
+    "title": "Guide Approval",
+    "nodes": {
+        "start": {
+            "type": "start",
+            "transitions": {
+                "start": "step1"
+            },
+            "form": "main"
+        },
+        "step1": {
+            "type": "participant",
+            "title": "Please approve this document",
+            "description": "The provided document requires your approval",
+            "swimlane": "approver",
+            "form": "main",
+            "transitions": {
+                "approve": "approve",
+                "reject": "reject"
+            }
+        },
+        "approve": {
+            "type": "passthru",
+            "transitions": {
+                "end": "end"
+            },
+            "handlers": {
+                "ENTER": [
+                    {
+                        "type": "setProperties",
+                        "config": {
+                            "properties": [{
+                                "name": "status",
+                                "value": "approved"
+                            }]
+                        }
+                    }
+                ]
+            }
+        },
+        "reject": {
+            "type": "passthru",
+            "transitions": {
+                "end": "end"
+            },
+            "handlers": {
+                "ENTER": [
+                    {
+                        "type": "setProperties",
+                        "config": {
+                            "properties": [{
+                                "name": "status",
+                                "value": "rejected"
+                            }]
+                        }
+                    }
+                ]
+            }
+        },
+        "end": {
+            "type": "end"
+        }
+    },
+    "swimlanes": {
+        "approver": {
+            "principals": []
+        }
+    },
+    "forms": {
+        "main": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "options": {
+                "fields": {
+                    "title": {
+                        "type": "text",
+                        "label": "Title",
+                        "required": true
+                    },
+                    "description": {
+                        "type": "text",
+                        "label": "Description",
+                        "required": true
+                    }
+                }
+            }
+        }
+    },
+    "id": "guide:approval"
+}
