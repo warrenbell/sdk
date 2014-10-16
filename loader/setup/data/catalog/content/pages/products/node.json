@@ -1,0 +1,8 @@
+{
+    "_type": "wcm:page",
+    "title": "Cupcakes",
+    "uris": [
+        "/catalog/products.html"
+    ],
+    "template": "/templates/products.html"
+}

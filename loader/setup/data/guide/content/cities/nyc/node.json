@@ -1,5 +1,29 @@
 {
     "_type": "guide:city",
     "_parentFolderPath": "/Samples/Guide/Cities",
-    "title": "New York City"
+    "title": "New York City",
+    "description": "New York City, New York, USA",
+    "state": "NY",
+    "author": "Wendy Apple",
+    "headline": "There's no place like the Big Apple!",
+    "summary": "New York – referred to as New York City or the City of New York to distinguish it from the State of New York, of which it is a part – is the most populous city in the United States and the center of the New York metropolitan area, the premier gateway for legal immigration to the United States and one of the most populous urban agglomerations in the world.",
+    "body": "New York traces its roots to its 1624 founding as a trading post by colonists of the Dutch Republic and was named New Amsterdam in 1626. The city and its surroundings came under English control in 1664. New York served as the capital of the United States from 1785 until 1790. It has been the country's largest city since 1790. The Statue of Liberty greeted millions of immigrants as they came to America by ship in the late 19th and early 20th centuries and is a globally recognized symbol of the United States and its democracy. On one of the world's largest natural harbors, New York City consists of five boroughs, each of which is a county of New York State. The five boroughs – the Bronx, Brooklyn, Manhattan, Queens, and Staten Island – were consolidated into a single city in 1898. With a census-estimated 2013 population of 8,405,837 distributed over a land area of just 305 square miles (790 km2), New York is the most densely populated major city in the United States. As many as 800 languages are spoken in New York, making it the most linguistically diverse city in the world. By 2013 census estimates, the New York City metropolitan region remains by a significant margin the most populous in the United States, as defined by both the Metropolitan Statistical Area (19.9 million residents) and the Combined Statistical Area (23.5 million residents). In 2013, the MSA produced a gross metropolitan product (GMP) of nearly US$1.39 trillion, while in 2012, the CSA generated a GMP of over US$1.55 trillion, both ranking first nationally by a wide margin and behind the GDP of only twelve nations and eleven nations, respectively. Many districts and landmarks in New York City have become well known to the city's approximately 55 million annual visitors. Several sources have ranked New York the most photographed city in the world. Times Square, iconified as 'The Crossroads of the World', is the brightly illuminated hub of the Broadway Theater District, one of the world's busiest pedestrian intersections, and a major center of the world's entertainment industry. The names of many of the city's bridges, skyscrapers, and parks are known around the world. New York City's financial district, anchored by Wall Street in Lower Manhattan, has been called the world's leading financial center and is home to the New York Stock Exchange, the world's largest stock exchange by total market capitalization of its listed companies. Manhattan's real estate market is among the most expensive in the world. Manhattan's Chinatown incorporates the highest concentration of Chinese people in the Western Hemisphere, with multiple signature Chinatowns developing across the city. Providing continuous 24/7 service, the New York City Subway is one of the most extensive metro systems worldwide, with 468 stations in operation.",
+    "highlights": [
+        "Visit the White House",
+        "Explore the National Mall",
+        "Navigate through historic Georgetown",
+        "Get lost on Dupont Circle",
+        "Learn about American History"
+    ],
+    "testimonials": [{
+        "text": "I love catching a show at Radio City Music Hall!",
+        "author": "Bill S. Preston Esquire"
+    }, {
+        "text": "Nothing beats a Yankees game!",
+        "author": "Ted Theodore Logan"
+    }],
+    "loc": {
+        "latitude": 40.7056308,
+        "longitude": -73.9780035
+    }
 }

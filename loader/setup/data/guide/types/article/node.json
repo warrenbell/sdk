@@ -1,5 +1,28 @@
 {
     "title": "Guide Article",
     "_qname": "guide:article",
-    "_type": "d:type"
+    "_type": "d:type",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string",
+            "title": "Title"
+        },
+        "description": {
+            "type": "string",
+            "title": "Description"
+        },
+        "author": {
+            "type": "string",
+            "title": "Author"
+        },
+        "headline": {
+            "type": "string",
+            "title": "Headline"
+        },
+        "body": {
+            "type": "string",
+            "title": "Body"
+        }
+    }
 }

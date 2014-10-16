@@ -1,5 +1,29 @@
 {
     "_type": "guide:city",
     "_parentFolderPath": "/Samples/Guide/Cities",
-    "title": "Boston"
+    "title": "Boston",
+    "description": "Boston, Massachusetts, USA",
+    "state": "MA",
+    "author": "Billy Beantown",
+    "headline": "A wonderful place to live",
+    "summary": "Boston, first incorporated as a town in 1630, and as a city in 1822, is one of America's oldest cities, with a rich economic and social history. What began as a homesteading community eventually evolved into a center for social and political change. Boston has since become the economic and cultural hub of New England.",
+    "body": "Boston is the capital and largest city of the Commonwealth of Massachusetts in the United States. Boston also serves as county seat of Suffolk County. The largest city in New England, the city proper, covering 48 square miles (124 km2), had an estimated population of 645,966 in 2014, making it the 24th largest city in the United States. The city is the anchor of a substantially larger metropolitan area called Greater Boston, home to 4.5 million people and the tenth-largest metropolitan area in the country. Greater Boston as a commuting region is home to 7.6 million people, making it the sixth-largest Combined Statistical Area in the United States. One of the oldest cities in the United States, Boston was founded on the Shawmut Peninsula in 1630 by Puritan colonists from England. It was the scene of several key events of the American Revolution, such as the Boston Massacre, the Boston Tea Party, the Battle of Bunker Hill, and the Siege of Boston. Upon American independence from Great Britain, the city continued to be an important port and manufacturing hub, as well as a center for education and culture. Through land reclamation and municipal annexation, Boston has expanded beyond the original peninsula. Its rich history helps attract many tourists, with Faneuil Hall alone attracting over 20 million visitors. Boston's many 'firsts' include the United States' first public school, Boston Latin School (1635), and first subway system (1897). The area's many colleges and universities make Boston an international center of higher education and medicine, and the city is considered to be a world leader in innovation for a variety of reasons. Boston's economic base also includes finance, professional and business services, and government activities. The city has one of the highest costs of living in the United States, though it remains high on world livability rankings.",
+    "highlights": [
+        "See the Red Sox play at Fenway Park",
+        "Explore Harvard and Central Square in Cambridge",
+        "Enjoy great Italian food in the North End",
+        "Boutique shopping in Brookline's Coolidge Corner",
+        "Have some chowdah around Faneuil Hall"
+    ],
+    "testimonials": [{
+        "text": "I love this place, it really makes me feel at home and it's a fantastic place to get away to",
+        "author": "John Jacobs"
+    }, {
+        "text": "Boston is my kind of town!",
+        "author": "Sam Adams"
+    }],
+    "loc": {
+        "latitude": 42.3584308,
+        "longitude": -71.0597732
+    }
 }

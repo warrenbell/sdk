@@ -1,9 +1,13 @@
 {
-    "title": "City",
-    "_qname": "guide:city",
+    "title": "Provider",
+    "_qname": "guide:provider",
     "_type": "d:type",
     "type": "object",
     "properties": {
+        "key": {
+            "type": "string",
+            "title": "Key"
+        },
         "title": {
             "type": "string",
             "title": "Title"
@@ -15,25 +19,6 @@
         "body": {
             "type": "string",
             "title": "Body"
-        },
-        "state": {
-            "type": "string",
-            "title": "State"
-        },
-        "loc": {
-            "type": "object",
-            "title": "Location",
-            "properties": {
-                "latitude": {
-                    "type": "number",
-                    "title": "Latitude"
-                },
-                "longitude": {
-                    "type": "number",
-                    "title": "Longitude"
-
-                }
-            }
         },
         "highlights": {
             "type": "array",

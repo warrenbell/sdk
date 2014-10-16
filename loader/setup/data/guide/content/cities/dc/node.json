@@ -1,5 +1,29 @@
 {
     "_type": "guide:city",
     "_parentFolderPath": "/Samples/Guide/Cities",
-    "title": "Washington D.C."
+    "title": "Washington D.C.",
+    "description": "Washington D.C., USA",
+    "state": "DC",
+    "author": "Martha Washington",
+    "headline": "The Capital of the United States",
+    "summary": "The USA’s capital teems with iconic monuments, vast museums and the corridors of power where visionaries and demagogues roam.Washington is the showcase of American arts, home to such prestigious venues as the National Theatre, the Kennedy Center and the Folger Shakespeare Theatre.",
+    "body": "Washington, D.C., formally the District of Columbia and commonly referred to as Washington, 'the District', or simply D.C., is the capital of the United States. The signing of the Residence Act on July 16, 1790, approved the creation of a capital district located along the Potomac River on the country's East Coast. The U.S. Constitution provided for a federal district under the exclusive jurisdiction of the Congress and the District is therefore not a part of any U.S. state. The states of Maryland and Virginia each donated land to form the federal district, which included the preexisting settlements of Georgetown and Alexandria. Named in honor of George Washington, the City of Washington was founded in 1791 to serve as the new national capital. In 1846, Congress returned the land originally ceded by Virginia and created a single municipal government for the remaining portion of the District in 1871. Washington, D.C., had an estimated population of 646,449 in 2013, the 23rd most populous city in the United States. Commuters from the surrounding Maryland and Virginia suburbs raise the city's population to more than one million during the workweek. The Washington metropolitan area, of which the District is a part, has a population of 5.8 million, the seventh-largest metropolitan statistical area in the country. The centers of all three branches of the federal government of the United States are in the District, including the Congress, president, and Supreme Court. Washington is home to many national monuments and museums, which are primarily situated on or around the National Mall. The city hosts 176 foreign embassies as well as the headquarters of many international organizations, trade unions, non-profit organizations, lobbying groups, and professional associations. A locally elected mayor and a 13‑member council have governed the District since 1973. However, the Congress maintains supreme authority over the city and may overturn local laws. D.C. residents elect a non-voting, at-large congressional delegate to the U.S. House of Representatives, but the District has no representation in the U.S. Senate. The District receives three electoral votes in presidential elections as permitted by the Twenty-third Amendment to the United States Constitution, ratified in 1961.",
+    "highlights": [
+        "Visit the White House",
+        "Explore the National Mall",
+        "Navigate through historic Georgetown",
+        "Get lost on Dupont Circle",
+        "Learn about American History"
+    ],
+    "testimonials": [{
+        "text": "This place really makes me proud of my country!",
+        "author": "Bill S. Preston Esquire"
+    }, {
+        "text": "Totally excellent place to visit...",
+        "author": "Ted Theodore Logan"
+    }],
+    "loc": {
+        "latitude": 38.8993487,
+        "longitude": -77.0145665
+    }
 }

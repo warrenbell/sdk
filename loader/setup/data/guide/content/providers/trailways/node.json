@@ -1,0 +1,18 @@
+{
+    "_type": "guide:provider",
+    "_parentFolderPath": "/Samples/Guide/Providers",
+    "key": "trailways",
+    "title": "Trailways",
+    "summary": "Trailways is a network of ground transportation providers offering more than 4,000 passenger transport vehicles for hire as well as scheduled route services in nearly 30 US states. Trailways, founded in 1936, is a quality and safety-oriented network of motorcoach service companies.",
+    "body": "Trailways is highly experienced in providing detailed and cost-effective ground transportation services for groups of all sizes, as well as customizing the individual transportation needs of travelers with all levels of requirements. Trailways clients are from every discipline, profession, and industry; and, whether we are transporting a convention, entertainment group, corporate event, military personnel, sports-related outing, or political event, or any other type of group, our customers appreciate and value our expertise and reliability.",
+    "highlights": [
+        "Highest quality bus service in the nation",
+        "Experienced and licensed drivers",
+        "Friendly staff",
+        "Clean and reliable transportation"
+    ],
+    "testimonials": [{
+        "text": "I don't always travel, but when I do, I travel with Trailways",
+        "author": "Jonathan Winters"
+    }]
+}

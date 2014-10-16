@@ -1,0 +1,42 @@
+{
+    "title": "Master Form",
+    "fields": {
+        "title": {
+            "type": "text",
+            "label": "Title"
+        },
+        "summary": {
+            "type": "textarea",
+            "label": "Summary"
+        },
+        "body": {
+            "type": "ckeditor",
+            "label": "Body",
+            "ckeditor": {
+                "toolbar": [
+                    ["Format", "Font", "FontSize"],
+                    ["Bold", "Italic", "Underline", "StrikeThrough", "-", "Undo", "Redo", "-", "Cut", "Copy", "Paste", "Find", "Replace", "-", "Outdent", "Indent", "-", "Print"], "/", ["NumberedList", "BulletedList", "-", "JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock"],
+                    ["Image", "Table", "-", "Link", "Flash", "Smiley", "TextColor", "BGColor", "Source"]
+                ]
+            }
+        },
+        "state": {
+            "type": "state",
+            "label": "State"
+        },
+        "loc": {
+            "type": "object",
+            "label": "Location",
+            "fields": {
+                "latitude": {
+                    "type": "number",
+                    "label": "Latitude"
+                },
+                "longitude": {
+                    "type": "number",
+                    "label": "Longitude"
+                }
+            }
+        }
+    }
+}

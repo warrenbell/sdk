@@ -1,0 +1,10 @@
+{
+    "_type": "guide:route",
+    "title": "Boston to New York City",
+    "source": "content/cities/boston/node.json",
+    "target": "content/cities/nyc/node.json",
+    "cost": 54.99,
+    "provider": "coach",
+    "departure": "10:15",
+    "arrival": "14:45"
+}

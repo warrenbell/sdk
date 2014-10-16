@@ -1,0 +1,17 @@
+{
+    "_type": "guide:provider",
+    "_parentFolderPath": "/Samples/Guide/Providers",
+    "key": "coach",
+    "title": "Coach USA",
+    "summary": "Coach USA offers various American transportation services including scheduled intercity bus service, local and commuter bus transit, city sightseeing, tour, yellow school bus, and charter bus service. It is owned by the British transportation company Stagecoach Group.",
+    "body": "Coach USA's operations today consist primarily of scheduled services in New York metropolitan area and Chicago metropolitan area, with a number of charter operations near Pittsburgh and scheduled operations in the Southern Tier of New York and southern Wisconsin, along with its Megabus operations throughout the eastern and central United States.",
+    "highlights": [
+        "Clean and safe transportation vehicles",
+        "Convenient routes and destinations",
+        "Air conditioned and heated service"
+    ],
+    "testimonials": [{
+        "text": "Certainly the best transportation company in the world",
+        "author": "Joan Jett"
+    }]
+}

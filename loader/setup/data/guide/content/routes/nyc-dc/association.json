@@ -1,0 +1,10 @@
+{
+    "_type": "guide:route",
+    "title": "New York City to Washington DC",
+    "source": "content/cities/nyc/node.json",
+    "target": "content/cities/dc/node.json",
+    "cost": 71.29,
+    "provider": "trailways",
+    "departure": "6:35",
+    "arrival": "11:15"
+}

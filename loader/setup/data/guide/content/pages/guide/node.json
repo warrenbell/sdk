@@ -1,0 +1,8 @@
+{
+    "_type": "wcm:page",
+    "title": "Guide",
+    "uris": [
+        "/guide/index.html"
+    ],
+    "template": "/templates/guide.html"
+}

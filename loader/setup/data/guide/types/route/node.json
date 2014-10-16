@@ -1,5 +1,29 @@
 {
     "title": "Route",
     "_qname": "guide:route",
-    "_type": "d:association"
+    "_type": "d:association",
+    "type": "object",
+    "properties": {
+        "cost": {
+            "type": "number",
+            "title": "Cost"
+        },
+        "provider": {
+            "type": "string",
+            "title": "Provider",
+            "enum": [
+                "greyhound",
+                "coach",
+                "trailways"
+            ]
+        },
+        "departure": {
+            "type": "string",
+            "title": "Departure Time"
+        },
+        "arrival": {
+            "type": "string",
+            "title": "Arrival Time"
+        }
+    }
 }
