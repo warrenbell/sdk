@@ -1,6 +1,7 @@
 {
     "_type": "wcm:page",
-    "title": "City",
+    "title": "Guide - City",
+    "_qname": "guide:page-city",
     "uris": [
         "/guide/city.html"
     ],

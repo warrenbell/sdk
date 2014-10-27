@@ -1,6 +1,7 @@
 {
     "_type": "wcm:page",
-    "title": "Guide",
+    "title": "Guide - Home",
+    "_qname": "guide:page-home",
     "uris": [
         "/guide/index.html"
     ],

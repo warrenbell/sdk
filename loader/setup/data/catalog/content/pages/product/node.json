@@ -1,6 +1,7 @@
 {
     "_type": "wcm:page",
-    "title": "Cupcake",
+    "_qname": "catalog:page-product",
+    "title": "Catalog - Product",
     "uris": [
         "/catalog/product.html"
     ],

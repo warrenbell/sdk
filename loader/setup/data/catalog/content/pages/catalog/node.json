@@ -1,6 +1,7 @@
 {
     "_type": "wcm:page",
-    "title": "Home",
+    "_qname": "catalog:page-home",
+    "title": "Catalog - Home",
     "uris": [
         "/catalog/index.html"
     ],

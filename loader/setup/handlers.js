@@ -11,6 +11,10 @@ module.exports = function()
         installer.removeContentAtPath("/Samples/Products");
         */
 
+        // remove wcm things
+        installer.removeContentInstances("wcm:page");
+        installer.removeContentInstances("wcm:template");
+
         installer.removeContentPackage("_common");
         installer.removeContentPackage("catalog");
         installer.removeContentPackage("guide");
