@@ -1,0 +1,8 @@
+{
+    "_type": "catalog:product-review",
+    "_parentFolderPath": "/Samples/Catalog/Reviews",
+    "title": "Review #21 Title",
+    "author": "don.rickles",
+    "body": "Review #21 Body",
+    "rating": 1
+}

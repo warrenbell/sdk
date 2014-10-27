@@ -1,0 +1,8 @@
+{
+    "_type": "catalog:product-review",
+    "_parentFolderPath": "/Samples/Catalog/Reviews",
+    "title": "Review #23 Title",
+    "author": "joan.rivers",
+    "body": "Review #23 Body",
+    "rating": 2
+}

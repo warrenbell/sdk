@@ -1,0 +1,8 @@
+{
+    "_type": "catalog:product-review",
+    "_parentFolderPath": "/Samples/Catalog/Reviews",
+    "title": "Review #51 Title",
+    "author": "george.burns",
+    "body": "Review #51 Body",
+    "rating": 4
+}

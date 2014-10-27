@@ -2,7 +2,8 @@
     "_type": "n:person",
     "_parentFolderPath": "/Samples/Users",
     "title": "Johnny Carson",
-    "name": "johnny.carson@tonightshow.com",
+    "name": "johnny.carson",
+    "email": "johnny.carson@tonightshow.com",
     "firstName": "Johnny",
     "lastName": "Carson"
 }

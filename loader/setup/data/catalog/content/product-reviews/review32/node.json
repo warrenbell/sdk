@@ -1,0 +1,8 @@
+{
+    "_type": "catalog:product-review",
+    "_parentFolderPath": "/Samples/Catalog/Reviews",
+    "title": "Review #32 Title",
+    "author": "johnny.carson",
+    "body": "Review #32 Body",
+    "rating": 3
+}

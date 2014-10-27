@@ -1,0 +1,5 @@
+{
+    "_type": "catalog:product-has-review",
+    "source": "content/products/vanilla-magic/node.json",
+    "target": "content/product-reviews/review51/node.json"
+}

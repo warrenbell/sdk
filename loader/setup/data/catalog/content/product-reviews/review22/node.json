@@ -1,0 +1,8 @@
+{
+    "_type": "catalog:product-review",
+    "_parentFolderPath": "/Samples/Catalog/Reviews",
+    "title": "Review #22 Title",
+    "author": "frank.sinatra",
+    "body": "Review #22 Body",
+    "rating": 3
+}

@@ -1,0 +1,8 @@
+{
+    "_type": "catalog:product-review",
+    "_parentFolderPath": "/Samples/Catalog/Reviews",
+    "title": "Review #12 Title",
+    "author": "dean.martin",
+    "body": "Review #12 Body",
+    "rating": 5
+}

@@ -1,0 +1,11 @@
+{
+    "title": "Catalog Product Has Review",
+    "_qname": "catalog:product-has-review",
+    "_type": "d:association",
+    "type": "object",
+    "mandatoryFeatures": {
+        "f:rates": {
+            "property": "rating"
+        }
+    }
+}

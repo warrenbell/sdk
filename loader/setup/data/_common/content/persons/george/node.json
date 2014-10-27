@@ -2,7 +2,8 @@
     "_type": "n:person",
     "_parentFolderPath": "/Samples/Users",
     "title": "George Burns",
-    "name": "george.burns@georgeandgracie.com",
+    "name": "george.burns",
+    "email": "george.burns@georgeandgracie.com",
     "firstName": "George",
     "lastName": "Burns"
 }

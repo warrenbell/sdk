@@ -2,7 +2,8 @@
     "_type": "n:person",
     "_parentFolderPath": "/Samples/Users",
     "title": "Dean Martin",
-    "name": "dean.martin@celebrityroast.com",
+    "name": "dean.martin",
+    "email": "dean.martin@celebrityroast.com",
     "firstName": "Dean",
     "lastName": "Martin"
 }

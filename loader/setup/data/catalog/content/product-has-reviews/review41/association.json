@@ -1,0 +1,5 @@
+{
+    "_type": "catalog:product-has-review",
+    "source": "content/products/tango-mango/node.json",
+    "target": "content/product-reviews/review41/node.json"
+}

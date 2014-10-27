@@ -2,7 +2,8 @@
     "_type": "n:person",
     "_parentFolderPath": "/Samples/Users",
     "title": "Frank Sinatra",
-    "name": "sinatra@frankie.com",
+    "name": "frank.sinatra",
+    "email": "sinatra@frankie.com",
     "firstName": "Frank",
     "lastName": "Sinatra"
 }

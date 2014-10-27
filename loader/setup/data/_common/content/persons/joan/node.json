@@ -2,7 +2,8 @@
     "_type": "n:person",
     "_parentFolderPath": "/Samples/Users",
     "title": "Joan Rivers",
-    "name": "joan.rivers@fashionpolice.com",
+    "name": "joan.rivers",
+    "email": "joan.rivers@fashionpolice.com",
     "firstName": "Joan",
     "lastName": "Rivers"
 }

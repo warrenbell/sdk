@@ -1,5 +1,5 @@
 {
-    "title": "Route",
+    "title": "Guide Route",
     "_qname": "guide:route",
     "_type": "d:association",
     "type": "object",

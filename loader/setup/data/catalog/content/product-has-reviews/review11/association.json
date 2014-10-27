@@ -1,0 +1,5 @@
+{
+    "_type": "catalog:product-has-review",
+    "source": "content/products/chocolate-delight/node.json",
+    "target": "content/product-reviews/review11/node.json"
+}

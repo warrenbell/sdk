@@ -1,6 +1,6 @@
 {
-    "title": "Catalog Review",
-    "_qname": "catalog:review",
+    "title": "Catalog Product Review",
+    "_qname": "catalog:product-review",
     "_type": "d:type",
     "type": "object",
     "properties": {
