@@ -1,0 +1,10 @@
+{
+    "_type": "catalog:product",
+    "_parentFolderPath": "/Samples/Catalog/Products",
+    "title": "Vanilla Magic",
+    "sku": "Vanilla Magic SKU",
+    "headline": "Vanilla Magic Headline",
+    "summary": "Vanilla Magic Summary",
+    "body": "Vanilla Magic Body",
+    "price": 2.49
+}

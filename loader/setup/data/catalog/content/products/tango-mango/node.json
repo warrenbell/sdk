@@ -1,0 +1,10 @@
+{
+    "_type": "catalog:product",
+    "_parentFolderPath": "/Samples/Catalog/Products",
+    "title": "Tango Mango",
+    "sku": "Tango Mango SKU",
+    "headline": "Tango Mango Headline",
+    "summary": "Tango Mango Summary",
+    "body": "Tango Mango Body",
+    "price": 1.29
+}

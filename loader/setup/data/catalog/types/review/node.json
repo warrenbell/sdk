@@ -1,0 +1,26 @@
+{
+    "title": "Catalog Review",
+    "_qname": "catalog:review",
+    "_type": "d:type",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string",
+            "title": "Title"
+        },
+        "author": {
+            "type": "string",
+            "title": "Author"
+        },
+        "body": {
+            "type": "string",
+            "title": "Body"
+        },
+        "rating": {
+            "type": "number",
+            "title": "Rating",
+            "enum": [5, 4, 3, 2, 1],
+            "default": 3
+        }
+    }
+}

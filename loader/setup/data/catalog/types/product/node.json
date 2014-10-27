@@ -1,5 +1,32 @@
 {
     "title": "Catalog Product",
     "_qname": "catalog:product",
-    "_type": "d:type"
+    "_type": "d:type",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string",
+            "title": "Title"
+        },
+        "sku": {
+            "type": "string",
+            "title": "SKU"
+        },
+        "headline": {
+            "type": "string",
+            "title": "Headline"
+        },
+        "summary": {
+            "type": "string",
+            "title": "Summary"
+        },
+        "body": {
+            "type": "string",
+            "title": "Body"
+        },
+        "price": {
+            "type": "number",
+            "title": "Price"
+        }
+    }
 }

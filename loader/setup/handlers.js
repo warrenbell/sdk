@@ -11,6 +11,7 @@ module.exports = function()
         installer.removeContentAtPath("/Samples/Products");
         */
 
+        installer.removeContentPackage("_common");
         installer.removeContentPackage("catalog");
         installer.removeContentPackage("guide");
     };
@@ -43,6 +44,7 @@ module.exports = function()
         });
         */
 
+        installer.addContentPackage("_common");
         installer.addContentPackage("catalog");
         installer.addContentPackage("guide");
     };

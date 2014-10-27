@@ -1,0 +1,35 @@
+{
+    "title": "Master Form",
+    "fields": {
+        "title": {
+            "type": "text",
+            "label": "Title"
+        },
+        "author": {
+            "type": "text",
+            "label": "Author"
+        },
+        "body": {
+            "type": "ckeditor",
+            "label": "Body",
+            "ckeditor": {
+                "toolbar": [
+                    ["Format", "Font", "FontSize"],
+                    ["Bold", "Italic", "Underline", "StrikeThrough", "-", "Undo", "Redo", "-", "Cut", "Copy", "Paste", "Find", "Replace", "-", "Outdent", "Indent", "-", "Print"], "/", ["NumberedList", "BulletedList", "-", "JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock"],
+                    ["Image", "Table", "-", "Link", "Flash", "Smiley", "TextColor", "BGColor", "Source"]
+                ]
+            }
+        },
+        "rating": {
+            "type": "integer",
+            "label": "Rating",
+            "optionLabels": [
+                "Terrible",
+                "Poor",
+                "Average",
+                "Good",
+                "Excellent"
+            ]
+        }
+    }
+}

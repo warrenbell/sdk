@@ -1,0 +1,10 @@
+{
+    "_type": "catalog:product",
+    "_parentFolderPath": "/Samples/Catalog/Products",
+    "title": "Chocolate Delight",
+    "sku": "Chocolate Delight SKU",
+    "headline": "Chocolate Delight Headline",
+    "summary": "Chocolate Delight Summary",
+    "body": "Chocolate Delight Body",
+    "price": 1.99
+}

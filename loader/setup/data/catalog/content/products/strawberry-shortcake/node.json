@@ -1,0 +1,10 @@
+{
+    "_type": "catalog:product",
+    "_parentFolderPath": "/Samples/Catalog/Products",
+    "title": "Strawberry Shortcake",
+    "sku": "Strawberry Shortcake SKU",
+    "headline": "Strawberry Shortcake Headline",
+    "summary": "Strawberry Shortcake Summary",
+    "body": "Strawberry Shortcake Body",
+    "price": 2.29
+}

@@ -1,0 +1,10 @@
+{
+    "_type": "catalog:product",
+    "_parentFolderPath": "/Samples/Catalog/Products",
+    "title": "Cookie Monster",
+    "sku": "Cookie Monster SKU",
+    "headline": "Cookie Monster Headline",
+    "summary": "Cookie Monster Summary",
+    "body": "Cookie Monster Body",
+    "price": 1.49
+}
