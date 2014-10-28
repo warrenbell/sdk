@@ -1,8 +1,8 @@
 {
     "_type": "catalog:product-review",
     "_parentFolderPath": "/Samples/Catalog/Reviews",
-    "title": "Review #12 Title",
+    "title": "Review #12 Death by Chocolate",
     "author": "dean.martin",
-    "body": "Review #12 Body",
-    "rating": 5
+    "body": "I didn’t know what death by chocolate actually meant, but I knew I wanted to achieve something with different textures and flavors to highlight the amazing entity that is chocolate.  I ended up choosing a dark chocolate cupcake with a chocolate mousse filling topped with a chocolate buttercream frosting and bits of bittersweet chocolate.  These cupcakes were met with rave reviews and I was very pleased with the end product.",
+    "rating": 4
 }

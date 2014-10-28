@@ -1,10 +1,10 @@
 {
     "_type": "catalog:product",
     "_parentFolderPath": "/Samples/Catalog/Products",
-    "title": "Cookie Monster",
+    "title": "Cookie Monster Cupcake",
     "sku": "Cookie Monster SKU",
-    "headline": "Cookie Monster Headline",
-    "summary": "Cookie Monster Summary",
-    "body": "Cookie Monster Body",
-    "price": 1.49
+    "headline": "Who doesn't love the cookie monster?",
+    "summary": "Cookie Monster cupcake! Eating a cookie! Arrrghh its so cute!! ",
+    "body": "These chocolate flavoured Cookie Monster cupcakes will delight your Sesame Street loving pre-schooler. They are perfect to take to school for birthdays or even just to delight your little guests at your next birthday party.",
+    "price": 3.49
 }
