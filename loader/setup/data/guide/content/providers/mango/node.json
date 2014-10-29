@@ -1,0 +1,17 @@
+{
+    "_type": "guide:provider",
+    "_parentFolderPath": "/Samples/Guide/Providers",
+    "key": "mango",
+    "title": "Mango Airline",
+    "summary": "Launched in October 2006 , Mango Airlines was  the first airline to be known as a true low cost airline in South Africa.",
+    "body": "Mango Airlines SOC Ltd, known as Mango, is a state-owned South African low-cost airline, founded in 2006 as a subsidiary of South African Airways, that operates domestic scheduled budget services.",
+    "highlights": [
+        "Highest quality Airline service in South Africa",
+        "Friendly staff",
+        "Clean and reliable transportation"
+    ],
+    "testimonials": [{
+        "text": "I don't always travel, but when I do, I travel with Mango",
+        "author": "Jonathan Winters"
+    }]
+}

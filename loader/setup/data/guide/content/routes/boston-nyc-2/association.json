@@ -3,8 +3,8 @@
     "title": "Boston to New York City",
     "source": "content/cities/boston/node.json",
     "target": "content/cities/nyc/node.json",
-    "cost": 54.99,
-    "provider": "coach",
+    "cost": 254.99,
+    "provider": "ryanair",
     "departure": "10:15",
-    "arrival": "14:45"
+    "arrival": "11:25"
 }

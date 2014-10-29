@@ -3,8 +3,8 @@
     "title": "Boston to New York City",
     "source": "content/cities/boston/node.json",
     "target": "content/cities/nyc/node.json",
-    "cost": 60.75,
-    "provider": "greyhound",
+    "cost": 260.75,
+    "provider": "jetblue",
     "departure": "8:45",
-    "arrival": "13:03"
+    "arrival": "9:43"
 }

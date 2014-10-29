@@ -4,7 +4,7 @@
     "source": "content/cities/nyc/node.json",
     "target": "content/cities/dc/node.json",
     "cost": 71.29,
-    "provider": "trailways",
+    "provider": "mango",
     "departure": "6:35",
-    "arrival": "11:15"
+    "arrival": "7:15"
 }
