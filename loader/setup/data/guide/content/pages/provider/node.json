@@ -1,0 +1,9 @@
+{
+    "_type": "wcm:page",
+    "title": "Guide - Providers",
+    "_qname": "guide:page-provider",
+    "uris": [
+        "/guide/provider.html"
+    ],
+    "template": "/templates/provider.html"
+}
