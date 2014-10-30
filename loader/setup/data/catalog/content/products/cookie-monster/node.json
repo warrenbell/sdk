@@ -6,5 +6,6 @@
     "headline": "Who doesn't love the cookie monster?",
     "summary": "Cookie Monster cupcake! Eating a cookie! Arrrghh its so cute!! ",
     "body": "These chocolate flavoured Cookie Monster cupcakes will delight your Sesame Street loving pre-schooler. They are perfect to take to school for birthdays or even just to delight your little guests at your next birthday party.",
-    "price": 3.49
+    "price": 3.49,
+    "categories": ["holidays", "birthdays"]
 }

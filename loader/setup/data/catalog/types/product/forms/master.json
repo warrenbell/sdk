@@ -31,6 +31,19 @@
         "price": {
             "type": "currency",
             "label": "Price"
+        },
+        "categories": {
+            "type": "array",
+            "items": {
+                "type": "select",
+                "optionLabels": [
+                    "Chocolate",
+                    "Strawberry",
+                    "Birthdays",
+                    "Holidays"
+                ]
+            }
         }
+
     }
 }
