@@ -1,9 +1,10 @@
 {
-    "_type": "n:person",
-    "_parentFolderPath": "/Samples/Users",
+    "_type": "guide:person",
+    "_parentFolderPath": "/Samples/Guide/People",
     "title": "Joan Rivers",
     "name": "joan.rivers",
     "email": "joan.rivers@fashionpolice.com",
     "firstName": "Joan",
-    "lastName": "Rivers"
+    "lastName": "Rivers",
+    "about": ""
 }

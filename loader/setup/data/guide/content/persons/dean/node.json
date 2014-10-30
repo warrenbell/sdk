@@ -1,9 +1,10 @@
 {
-    "_type": "n:person",
-    "_parentFolderPath": "/Samples/Users",
+    "_type": "guide:person",
+    "_parentFolderPath": "/Samples/Guide/People",
     "title": "Dean Martin",
     "name": "dean.martin",
     "email": "dean.martin@celebrityroast.com",
     "firstName": "Dean",
-    "lastName": "Martin"
+    "lastName": "Martin",
+    "about": ""
 }

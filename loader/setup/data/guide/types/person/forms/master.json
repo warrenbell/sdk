@@ -1,0 +1,36 @@
+{
+    "title": "Master Form",
+    "fields": {
+        "title": {
+            "type": "text",
+            "label": "Title"
+        },
+        "name": {
+            "type": "text",
+            "label": "Name"
+        },
+        "email": {
+            "type": "email",
+            "label": "Email"
+        },
+        "firstName": {
+            "type": "text",
+            "label": "First Name"
+        },
+        "lastName": {
+            "type": "text",
+            "label": "Last Name"
+        },
+        "about": {
+            "type": "ckeditor",
+            "label": "About",
+            "ckeditor": {
+                "toolbar": [
+                    ["Format", "Font", "FontSize"],
+                    ["Bold", "Italic", "Underline", "StrikeThrough", "-", "Undo", "Redo", "-", "Cut", "Copy", "Paste", "Find", "Replace", "-", "Outdent", "Indent", "-", "Print"], "/", ["NumberedList", "BulletedList", "-", "JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock"],
+                    ["Image", "Table", "-", "Link", "Flash", "Smiley", "TextColor", "BGColor", "Source"]
+                ]
+            }
+        }
+    }
+}

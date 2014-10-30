@@ -1,9 +1,10 @@
 {
-    "_type": "n:person",
-    "_parentFolderPath": "/Samples/Users",
+    "_type": "guide:person",
+    "_parentFolderPath": "/Samples/Guide/People",
     "title": "Don Rickles",
     "name": "don.rickles",
     "email": "don.rickles@hockeypuck.com",
     "firstName": "Don",
-    "lastName": "Rickles"
+    "lastName": "Rickles",
+    "about": ""
 }
