@@ -1,0 +1,10 @@
+{
+    "_type": "guide:route",
+    "title": "Washington DC to Barcelona",
+    "source": "content/cities/dc/node.json",
+    "target": "content/cities/barcelona/node.json",
+    "cost": 1160.75,
+    "provider": "jetblue",
+    "departure": "8:45",
+    "arrival": "12:43"
+}

@@ -1,0 +1,10 @@
+{
+    "_type": "guide:route",
+    "title": "London to Rio",
+    "source": "content/cities/london/node.json",
+    "target": "content/cities/rio/node.json",
+    "cost": 2600.75,
+    "provider": "mango",
+    "departure": "8:45",
+    "arrival": "16:43"
+}

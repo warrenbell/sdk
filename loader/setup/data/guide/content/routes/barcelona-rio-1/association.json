@@ -1,0 +1,10 @@
+{
+    "_type": "guide:route",
+    "title": "Barcelona to Rio",
+    "source": "content/cities/barcelona/node.json",
+    "target": "content/cities/rio/node.json",
+    "cost": 3260.75,
+    "provider": "ryanair",
+    "departure": "18:45",
+    "arrival": "22:43"
+}
