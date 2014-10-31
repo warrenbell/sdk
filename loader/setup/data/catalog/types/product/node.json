@@ -27,6 +27,18 @@
         "price": {
             "type": "number",
             "title": "Price"
+        },
+        "categories": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "chocolate",
+                    "strawberry",
+                    "birthdays",
+                    "holidays"
+                ]
+            }
         }
     }
 }

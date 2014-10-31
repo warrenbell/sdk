@@ -1,9 +1,10 @@
 {
-    "_type": "n:person",
-    "_parentFolderPath": "/Samples/Users",
+    "_type": "guide:person",
+    "_parentFolderPath": "/Samples/Guide/People",
     "title": "Frank Sinatra",
     "name": "frank.sinatra",
     "email": "sinatra@frankie.com",
     "firstName": "Frank",
-    "lastName": "Sinatra"
+    "lastName": "Sinatra",
+    "about": ""
 }

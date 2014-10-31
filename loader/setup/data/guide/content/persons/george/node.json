@@ -1,9 +1,10 @@
 {
-    "_type": "n:person",
-    "_parentFolderPath": "/Samples/Users",
+    "_type": "guide:person",
+    "_parentFolderPath": "/Samples/Guide/People",
     "title": "George Burns",
     "name": "george.burns",
     "email": "george.burns@georgeandgracie.com",
     "firstName": "George",
-    "lastName": "Burns"
+    "lastName": "Burns",
+    "about": ""
 }

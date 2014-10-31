@@ -5,21 +5,25 @@
             "type": "text",
             "label": "Title"
         },
-        "sku": {
+        "name": {
             "type": "text",
-            "label": "SKU"
+            "label": "Name"
         },
-        "headline": {
+        "email": {
+            "type": "email",
+            "label": "Email"
+        },
+        "firstName": {
             "type": "text",
-            "label": "Headline"
+            "label": "First Name"
         },
-        "summary": {
+        "lastName": {
             "type": "text",
-            "label": "Summary"
+            "label": "Last Name"
         },
-        "body": {
+        "about": {
             "type": "ckeditor",
-            "label": "Body",
+            "label": "About",
             "ckeditor": {
                 "toolbar": [
                     ["Format", "Font", "FontSize"],
@@ -27,23 +31,6 @@
                     ["Image", "Table", "-", "Link", "Flash", "Smiley", "TextColor", "BGColor", "Source"]
                 ]
             }
-        },
-        "price": {
-            "type": "currency",
-            "label": "Price"
-        },
-        "categories": {
-            "type": "array",
-            "items": {
-                "type": "select",
-                "optionLabels": [
-                    "Chocolate",
-                    "Strawberry",
-                    "Birthdays",
-                    "Holidays"
-                ]
-            }
         }
-
     }
 }
