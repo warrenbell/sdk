@@ -1,0 +1,29 @@
+{
+    "_type": "guide:city",
+    "_parentFolderPath": "/Samples/Guide/Cities",
+    "title": "Barcelona",
+    "description": "Barcelona, Spain",
+    "state": "",
+    "author": "Salvador Dali",
+    "headline": "A beautiful City",
+    "summary": "Barcelona is the capital of the autonomous community of Catalonia and the second largest city in Spain after Madrid with a population of 1,700 000 intra-muros when five million people live in the whole Barcelona metropolitan area. Barcelona is the largest metropolis on the Mediterranean Sea and the fourth economically powerful city by GDP in the European Union. Widely spoken Catalan and Spanish are both the official languages.",
+    "body": "Barcelona is a huge city with several district articles containing sightseeing, restaurant, nightlife and accommodation listings — have a look at each of them. Barcelona is the capital and largest city of Catalonia and Spain's second largest city, with a population of over one and half million people (over five million in the whole province). This city, located directly on the northeastern Mediterranean coast of Spain, has a rich history, having been under Roman, then Frank law before declaring its independence. In 1992, Barcelona gained international recognition by hosting the Olympic games which brought a massive upturn in its tourism industry. This had the effect of changing the city in ways that are still felt today with neighbourhoods renovated (and in some cases leveled) and the intense focus of modern design permeating all aspects of life in Barcelona from public buildings to something as simple as a park bench or an event poster. For visitors, this has translated into the very modern, yet incredibly old city you see now in the 21st century, where the new elements work to both preserve and celebrate the ancient. This beautiful city is full of what European cities are known for (outdoor markets, restaurants, shops, museums and churches) and is fantastic for walking with an extensive and reliable Metro system for more far-flung destinations. The core centre of town, focused around the Ciutat Vella (Old City) provides days of enjoyment for those looking to experience the life of Barcelona while the beaches the city was built upon provide sun and relaxation during the long periods of agreeably warm weather.",
+    "highlights": [
+        "Explore Gaudi and modernism",
+        "Picture the city of Picasso's youth",
+        "Fill up on tapas, pintxos and vermouth",
+        "Take a dip in the Mediterranean",
+        "Enjoy a really good party"
+    ],
+    "testimonials": [{
+        "text": "This place really makes me proud of my country!",
+        "author": "Enrirue Iglesias"
+    }, {
+        "text": "Great place to paint",
+        "author": "Pablo Picasso"
+    }],
+    "loc": {
+        "latitude": 38.8993487,
+        "longitude": -77.0145665
+    }
+}

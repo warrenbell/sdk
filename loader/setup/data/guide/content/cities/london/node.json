@@ -1,0 +1,28 @@
+{
+    "_type": "guide:city",
+    "_parentFolderPath": "/Samples/Guide/Cities",
+    "title": "London",
+    "description": "London, England",
+    "state": "",
+    "author": "Winston Churchill",
+    "headline": "A beautiful City",
+    "summary": "London is the political, economic and cultural capital of England. You can visit the Queen's official residence at Buckingham Palace and tour the Houses of Parliament, historic home of the UK government. London is incredibly well-connected, with five international airports and the high-speed Eurostar rail link. More than 50 countries are within a three-hour flight time and upwards of 300 international destinations have direct links to London.",
+    "body": "London is the capital city of England and the United Kingdom. It is the most populous city in the United Kingdom with a metropolitan area of over 13 million inhabitants. Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium. London's ancient core, the City of London, largely retains its 1.12-square-mile (2.9 km2) mediaeval boundaries and in 2011 had a resident population of 7,375, making it the smallest city in England.",
+    "highlights": [
+        "Marvel at the Crown Jewel In the Tower of London",
+        "Some of the best views From The London Eye",
+        "Come face-to-face with some of the world's most famous faces at Madame Tussauds",
+        "Soak up the culture"
+    ],
+    "testimonials": [{
+        "text": "Great place for foofball",
+        "author": "David Beckham"
+    }, {
+        "text": "I’m leaving because the weather is too good. I hate London when it’s not raining.",
+        "author": "Groucho Marx"
+    }],
+    "loc": {
+        "latitude": 38.8993487,
+        "longitude": -77.0145665
+    }
+}

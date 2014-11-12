@@ -1,0 +1,29 @@
+{
+    "_type": "guide:city",
+    "_parentFolderPath": "/Samples/Guide/Cities",
+    "title": "Rio de Janeiro",
+    "description": "Rio de Janeiro, Brazil",
+    "state": "",
+    "author": "Pele",
+    "headline": "Rio de Janeiro, commonly referred to as simply Rio, is the second largest city in Brazil",
+    "summary": "At once both a cinematic cityscape and a grimy urban front line, Rio de Janeiro, known as the cidade maravilhosa (marvelous city), is nothing if not exhilarating. Flanked by gorgeous mountains, white-sand beaches and verdant rainforests fronting deep blue sea, Rio occupies one of the most spectacular settings of any metropolis in the world. Tack on one of the sexiest populations on the planet and you have an intoxicating tropical cocktail that leaves visitors punch-drunk on paradise.",
+    "body": "Rio de Janeiro never fails to impress us with its modern outlook that reflects its progression through the times of yore. The historic sites, sparkling beaches, green belts and jubilant attitude of the locals embrace the tourists to the world where heaven meets the earth. If Ronaldo played football at the Maracana stadium, then Christ the Redeemer puts Rio on the world map. Rio's carnival with its effervescent samba dancers jiggling their hips attracts thousands of tourists around the world. The rain-forests, museums, beaches and the glitz of the city have made Rio what it is today - Brazil's top-notch tourist attraction.",
+    "highlights": [
+        "Visit Christ the Redeemer",
+        "Visit to the Mecca of Football; the Maracana Stadium.",
+        "The Rio de Janeiro Botanical Gardens is a complete resource on Amazonian tropical species",
+        "Enjoy Carnival season",
+        "and dont forget the beaches"
+    ],
+    "testimonials": [{
+        "text": "Rio's a beautiful city, a vibrant place, special place",
+        "author": "Eduardo Paes"
+    }, {
+        "text": "People don't really go to museums in Rio. I shouldn't say it's not sophisticated, but, you know, they go to the beach.",
+        "author": "Francisco Costa"
+    }],
+    "loc": {
+        "latitude": 38.8993487,
+        "longitude": -77.0145665
+    }
+}
