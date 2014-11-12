@@ -1,6 +1,6 @@
 {
-    "_type": "guide:person",
-    "_parentFolderPath": "/Samples/Guide/People",
+    "_type": "catalog:person",
+    "_parentFolderPath": "/Samples/Catalog/People",
     "title": "Don Rickles",
     "name": "don.rickles",
     "email": "don.rickles@hockeypuck.com",

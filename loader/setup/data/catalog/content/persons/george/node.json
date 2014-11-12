@@ -1,6 +1,6 @@
 {
-    "_type": "guide:person",
-    "_parentFolderPath": "/Samples/Guide/People",
+    "_type": "catalog:person",
+    "_parentFolderPath": "/Samples/Catalog/People",
     "title": "George Burns",
     "name": "george.burns",
     "email": "george.burns@georgeandgracie.com",
