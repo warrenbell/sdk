@@ -1,6 +1,6 @@
 {
-    "title": "Guide Person",
-    "_qname": "guide:person",
+    "title": "Catalog Person",
+    "_qname": "catalog:person",
     "_type": "d:type",
     "_parent": "n:person",
     "type": "object",
