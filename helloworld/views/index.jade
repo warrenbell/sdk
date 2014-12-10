@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1!= "Article Query"
+    p #{map.__size()} articles found
+
+    div.list
+        each id, i in map.__keys()
+            - var user = map.get(id)
+            p.did= "id:"+user._doc
+            h2= user.title
+            p.article= user.body
+
+
