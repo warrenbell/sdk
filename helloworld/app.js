@@ -13,40 +13,34 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 var platform = null;
-
+var skey = "helloworld";
 /** the branch object */
 var br = null;
 
-var skey = "helloworld:article";
-
-var create = function(title,body) {
-    return {
-        stype:skey,
-        title:title,
-        body:body
-    };
-};
-
-
 // some articles relating to programming
-
-var obj1 = create("hello world", "hello is one of the first words that children learn. ");
-obj1.body += "hello world is one of the first programs that students of a new language write. ";
-obj1.body += "it's a tradition started by kernigan and ritchie in their de facto standard for the c language";
-obj1.body += "the nominal purpose of the program is to print 'hello world'.";
-
-var obj2 = create("foobar", "foobar is a common placeholder name for a variable, ");
-obj2.body += "suggesting that the variable's purpose is unimportant and exists only to demonstrate a concept.";
-obj2.body += "it is often used as a whole, but can be broken into components foo, bar and baz";
-
-var obj3 = create("kludge", "kludge is a word that suggests that a solution is clumsy, ineligant and brittle. ");
-obj3.body += "while many eschew such solutions, at many a day has been saved by the versatile engineer ";
-obj3.body += "who has been willing to risk public shame and resorted to the crudest of kludges.";
+var obj1 = {
+    example: skey,
+    title: "hello world",
+    body: "hello is one of the first words that children learn."
+};
+var obj2 = {
+    example: skey,
+    title: "foobar",
+    body: "foobar is a common placeholder name for a variable."
+};
+var obj3 = {
+    example: skey,
+    title: "kludge",
+    body: "kludge is a word that suggests that a solution is clumsy"
+};
 
 
 
 app.get( "/init", function(req, res) {
-    if (br==null) return waiting(res);
+    if (!br) {
+        res.render('waiting');
+        return;
+    }
 
     // is this thread-safe ???
     var num = 0;
@@ -58,34 +52,28 @@ app.get( "/init", function(req, res) {
 
 
 app.get( "/", function(req, res) {
-    if (br==null) return waiting(res);
-    br.queryNodes({stype:skey}).then(function () {
+    if (!br) {
+        res.render('waiting');
+        return;
+    }
+    br.queryNodes({example:skey}).then(function () {
         var obj = {map:this};
         res.render('index', obj);
     });
 });
 
 app.get( "/teardown", function(req, res) {
-    if (br==null) return waiting(res);
-    br.queryNodes({stype:skey}).then(function () {
+    if (!br) {
+        res.render('waiting');
+        return;
+    }
+    br.queryNodes({example:skey}).then(function () {
         var num = this.__size();
         this.del().then(function() {
             res.render('teardown', {num:num});
         });
     });
 });
-
-app.get( "/restful", function(req, res) {
-    if (br==null) return waiting(res);
-    br.createNode({stype:skey, "title":"some secret stuff"}).then(function() {
-        res.set('Content-Type', 'application/json');
-        res.send(JSON.stringify(this));
-    });
-});
-
-var waiting = function(res) {
-    res.render('waiting');
-};
 
 
 
