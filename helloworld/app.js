@@ -1,3 +1,17 @@
+/*
+
+A simple nodejs/express server that demonstrates
+  connecting to CloudCMS
+  creating nodes
+  querying nodes
+  deleting nodes
+
+See the README in this directory for instructions on running
+
+ */
+
+
+
 var express = require('express');
 var path = require('path');
 var gitana = require("gitana");
@@ -12,49 +26,51 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
+/** the cloudcms application helper */
 var platform = null;
-var skey = "helloworld";
-/** the branch object */
+
+/** the cloudcms branch object */
 var br = null;
 
+/** a common attribute for all nodes that are created to enable easy querying */
+var skey = "helloworld";
+
 // some articles relating to programming
-var obj1 = {
+var article1 = {
     example: skey,
     title: "hello world",
-    body: "hello is one of the first words that children learn."
+    body: "hello world is a simple program that demonstrates a roundtrip."
 };
-var obj2 = {
+var article2 = {
     example: skey,
     title: "foobar",
     body: "foobar is a common placeholder name for a variable."
 };
-var obj3 = {
+var article3 = {
     example: skey,
     title: "kludge",
     body: "kludge is a word that suggests that a solution is clumsy"
 };
 
 
-
+// create 3 nodes when the user visits /init
 app.get( "/init", function(req, res) {
     if (!br) {
-        res.render('waiting');
-        return;
+        return waiting(res);
     }
 
     // is this thread-safe ???
     var num = 0;
     var cb = function() { if (++num==3) res.render('init', {}); }
-    br.createNode(obj1).then(cb);
-    br.createNode(obj2).then(cb);
-    br.createNode(obj3).then(cb);
+    br.createNode(article1).then(cb);
+    br.createNode(article2).then(cb);
+    br.createNode(article3).then(cb);
 });
 
-
+// query all the nodes that have been created
 app.get( "/", function(req, res) {
     if (!br) {
-        res.render('waiting');
-        return;
+        return waiting(res);
     }
     br.queryNodes({example:skey}).then(function () {
         var obj = {map:this};
@@ -62,10 +78,10 @@ app.get( "/", function(req, res) {
     });
 });
 
+// delete the nodes that have been created
 app.get( "/teardown", function(req, res) {
     if (!br) {
-        res.render('waiting');
-        return;
+        return waiting(res);
     }
     br.queryNodes({example:skey}).then(function () {
         var num = this.__size();
@@ -75,10 +91,19 @@ app.get( "/teardown", function(req, res) {
     });
 });
 
+/**
+ * if the server hasn't finished connecting to CloudCMS, tell the user to try again later
+ * @param res the express response object
+ */
+var waiting = function(res) {
+    res.render('waiting');
+};
 
 
-
-
+// Connect to Cloud CMS
+//
+// By default, this loads config from the gitana.json in the application root.
+// Or you can pass in the config as a json object as the first argument
 gitana.connect(function(err) {
     // if we were unable to connect, send back an error
     if (err) {
@@ -117,9 +142,8 @@ app.use(function(err, req, res, next) {
 });
 
 
-
+// start a webserver
 app.set('port', process.env.PORT || 3000);
-
 var server = app.listen(app.get('port'), function() {
     console.log('Express server listening on port ' + server.address().port);
 });

@@ -1,0 +1,55 @@
+# Cloud CMS Hello World
+
+This directory contains a simple example of using Cloud CMS.
+It's a nodejs webserver using the express framework.
+- connect to Cloud CMS
+- access the "content" datastore and the "master" branch
+- create, query and delete nodes in that branch
+
+
+## Requirements
+
+Install Node.js
+npm install cloudcms-cli -g
+
+
+
+
+## Prior to running the first time
+
+cloudcms init
+
+cloudcms connect
+    choose the "Sample Web Site" that is created automatically
+        if you've deleted that application, then select another project you have created
+        or use "cloudcms create" to create a new application
+    choose the default deployment
+    note: this creates a gitana.json file that the express app uses as credentials to connect to Cloud CMS
+        alternatively, you can provide the credentials directly as the first argument
+        to Gitana.connect() in app.js
+
+
+
+
+
+
+## To run the server
+
+node app.js
+
+
+
+connect to the server using a browser at the following addresses
+    http://localhost:3000/init
+      - create some nodes in Cloud CMS
+    http://localhost:3000
+      - query all nodes that have been created
+    http://localhost:3000/teardown
+      - delete the nodes that have been created
+
+
+it takes a few seconds for the connection with Cloud CMS to complete
+  if you access the webserver during this time,
+  a message instructing you to retry in a few seconds will display instead
+
+
