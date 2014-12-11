@@ -1,21 +1,21 @@
-# Cloud CMS Hello World using Express framework
+# Cloud CMS Hello World
 
 This directory contains a simple example of using Cloud CMS.
-It's a nodejs webserver using the express framework.
+It's a nodejs webserver that doesn't depend on any framework.
 - connect to Cloud CMS
 - access the "content" datastore and the "master" branch
-- create, query and delete nodes in that branch
+- query the cities in the travel guide in the sample project
 - respond to http requests with query results
 
 
-## Requirements
+Requirements:
     Install Node.js
     npm install
 
 
 
+___Credentials___
 
-## Credentials
 
 the server needs credentials to be able to connect to Cloud CMS
 they can be provided directly as the first argument in the call to Gitana.connect (see app.js)
@@ -54,12 +54,7 @@ node app.js
 
 
 connect to the server using a browser at the following addresses
-    http://localhost:3000/init
-      - create some nodes in Cloud CMS
     http://localhost:3000
-      - query all nodes that have been created
-    http://localhost:3000/teardown
-      - delete the nodes that have been created
 
 
 it takes a few seconds for the connection with Cloud CMS to complete
