@@ -1,0 +1,64 @@
+# Cloud CMS Hello World
+
+This directory contains a simple example of using Cloud CMS.
+It's a nodejs webserver that doesn't depend on any framework.
+- connect to Cloud CMS
+- access the "content" datastore and the "master" branch
+- query the cities in the travel guide in the sample project
+
+
+Requirements:
+  Install Node.js
+
+
+
+___Credentials___
+
+
+the server needs credentials to be able to connect to Cloud CMS
+they can be provided directly as the first argument in the call to Gitana.connect (see app.js)
+or they can be saved in a file named gitana.json in this directory
+  and Gitana.connect will read them automatically
+
+
+
+Automated Method
+
+    npm install -g cloudcms-cli
+    npm install
+    cloudcms init
+    cloudcms connect
+        choose the "Sample Web Site" that is created automatically
+            if you've deleted that application, then select another project you have created
+            or use "cloudcms create" to create a new application
+        choose the default deployment
+        this will generate a gitana.json
+
+Manual Method
+    visit http://tenant.cloudcms.net/#/developers
+    were tenant is the domain that you signed up with
+    click "gitana.json"
+    highlight and copy the json
+    and save it as a file named "gitana.json" in this directory
+        alternatively, you can paste it into app.js and assign it to the variable credentials
+
+
+
+
+
+## To run the server
+
+npm install
+node app.js
+
+
+
+connect to the server using a browser at the following addresses
+    http://localhost:3000
+
+
+it takes a few seconds for the connection with Cloud CMS to complete
+  if you access the webserver during this time,
+  a message instructing you to retry in a few seconds will display instead
+
+
