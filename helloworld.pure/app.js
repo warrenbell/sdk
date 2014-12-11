@@ -1,20 +1,25 @@
 var http = require('http');
 
-// Configure our HTTP server to respond with Hello World to all requests.
 var server = http.createServer(function (request, response) {
     if (!br) {
         return waiting(response);
     }
+    // query the sample application in cloud cms and list all the cities in the travel guide
     br.queryNodes({"_type": "guide:city"}).then(function () {
         response.writeHead(200, {"Content-Type": "text/plain"});
+        // this is a NodeMap comprising several nodes, each of which represents a city
         var map = this;
         var keys = map.__keys();
         for (var ii=0; ii<keys.length; ii++) {
             var key = keys[ii];
-            var obj = map[key];
-            var txt = JSON.stringify(obj);
+            var city = map[key];
+            var txt = JSON.stringify(city);
+
+            // write the JSON representation of the city out as plain text
             response.write(txt + "\n\n\n");
         }
+
+        // finish with the canonical "hello world"
         response.end("\n\nHello World\n\n");
     });
 });
@@ -34,7 +39,7 @@ var platform = null;
 /** the cloudcms branch object */
 var br = null;
 
-var failed = false, errorMessage;
+var errorMessage;
 
 
 /**
@@ -72,6 +77,7 @@ gitana.connect(credential,function(err) {
     platform = this;
     platform.datastore("content").readBranch("master")
         .then(function() {
+            // save the branch as a global variable so the server can use it
             br = this;
             var msg = JSON.stringify(this);
             console.log(msg);
