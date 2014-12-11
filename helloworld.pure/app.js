@@ -1,3 +1,17 @@
+/*
+
+ A simple nodejs server that demonstrates
+ connecting to CloudCMS
+ using the branch object
+ querying nodes
+
+ See the README in this directory for instructions on running
+
+ */
+
+
+
+
 var http = require('http');
 
 var server = http.createServer(function (request, response) {
@@ -39,6 +53,7 @@ var platform = null;
 /** the cloudcms branch object */
 var br = null;
 
+/** error message returned by Gitana.connect, if any */
 var errorMessage;
 
 
@@ -51,7 +66,7 @@ var waiting = function(response) {
     if (errorMessage) {
         response.end("Could not connect to Cloud CMS, " +
             "please check your gitana.json configuration file:\n\n" +
-            JSON.stringify(errorMessage));
+            JSON.stringify(errorMessage,true,2));
         return;
     }
     response.end("Connecting to CloudCMS ... please wait and retry in a few seconds");
@@ -60,14 +75,14 @@ var waiting = function(response) {
 /**
  * credentials to be used to connect to cloudcms
  * if null, the file gitana.json in this directory is used instead
- **/
-var credential = null;
+ */
+var credentials = null;
 
 // Connect to Cloud CMS
 //
 // By default, this loads config from the gitana.json in the application root.
 // Or you can pass in the config as a json object as the first argument
-gitana.connect(credential,function(err) {
+gitana.connect(credentials,function(err) {
     // if we were unable to connect, send back an error
     if (err) {
         console.log("error during Gitana.connect: " + JSON.stringify(err));

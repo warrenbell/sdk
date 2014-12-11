@@ -1,33 +1,47 @@
-# Cloud CMS Hello World
+# Cloud CMS Hello World using Express framework
 
 This directory contains a simple example of using Cloud CMS.
 It's a nodejs webserver using the express framework.
 - connect to Cloud CMS
 - access the "content" datastore and the "master" branch
 - create, query and delete nodes in that branch
+- respond to http requests with query results
 
 
 ## Requirements
-
-Install Node.js
-npm install cloudcms-cli -g
-
+    Install Node.js
+    npm install
 
 
 
-## Prior to running the first time
 
-cloudcms init
+## Credentials
 
-cloudcms connect
-    choose the "Sample Web Site" that is created automatically
-        if you've deleted that application, then select another project you have created
-        or use "cloudcms create" to create a new application
-    choose the default deployment
-    note: this creates a gitana.json file that the express app uses as credentials to connect to Cloud CMS
-        alternatively, you can provide the credentials directly as the first argument
-        to Gitana.connect() in app.js
+the server needs credentials to be able to connect to Cloud CMS
+they can be provided directly as the first argument in the call to Gitana.connect (see app.js)
+or they can be saved in a file named gitana.json in this directory
+  and Gitana.connect will read them automatically
 
+
+
+Automated Method
+
+    npm install -g cloudcms-cli
+    cloudcms init
+    cloudcms connect
+        choose the "Sample Web Site" that is created automatically
+            if you've deleted that application, then select another project you have created
+            or use "cloudcms create" to create a new application
+        choose the default deployment
+        this will generate a gitana.json
+
+Manual Method
+    visit http://__tenant__.cloudcms.net/#/developers
+    where __tenant__ is the domain that you signed up with
+    click "gitana.json"
+    highlight and copy the json
+    and save it as a file named "gitana.json" in this directory
+        alternatively, you can paste it into app.js and assign it to the variable credentials
 
 
 

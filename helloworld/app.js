@@ -32,6 +32,9 @@ var platform = null;
 /** the cloudcms branch object */
 var br = null;
 
+/** error message returned by Gitana.connect, if any */
+var errorMessage;
+
 /** a common attribute for all nodes that are created to enable easy querying */
 var skey = "helloworld";
 
@@ -96,18 +99,27 @@ app.get( "/teardown", function(req, res) {
  * @param res the express response object
  */
 var waiting = function(res) {
-    res.render('waiting');
+    res.render('waiting',{err:errorMessage});
 };
+
+
+/**
+ * credentials to be used to connect to cloudcms
+ * if null, the file gitana.json in this directory is used instead
+ */
+var credentials = null;
+
 
 
 // Connect to Cloud CMS
 //
 // By default, this loads config from the gitana.json in the application root.
 // Or you can pass in the config as a json object as the first argument
-gitana.connect(function(err) {
+gitana.connect(credentials,function(err) {
     // if we were unable to connect, send back an error
     if (err) {
-        res.send(500, "Could not connect to Cloud CMS, please check your gitana.json configuration file: " + JSON.stringify(err));
+        console.log("error during Gitana.connect: " + JSON.stringify(err));
+        errorMessage = err;
         return;
     }
     platform = this;
