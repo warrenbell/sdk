@@ -72,6 +72,14 @@ var waiting = function(response) {
     response.end("Connecting to CloudCMS ... please wait and retry in a few seconds");
 };
 
+
+/** an error handler for chaining trap */
+var trapper = function(err) {
+    errorMessage = err;
+    console.log("error: " + JSON.stringify(err));
+};
+
+
 /**
  * credentials to be used to connect to cloudcms
  * if null, the file gitana.json in this directory is used instead
@@ -90,7 +98,9 @@ gitana.connect(credentials,function(err) {
         return;
     }
     platform = this;
-    platform.datastore("content").readBranch("master")
+    platform
+        .trap(trapper).datastore("content")
+        .trap(trapper).readBranch("master")
         .then(function() {
             // save the branch as a global variable so the server can use it
             br = this;
