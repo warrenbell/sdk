@@ -1,26 +1,43 @@
 # Cloud CMS Hello World
 
-This directory contains a simple example of using Cloud CMS.
-It's a nodejs webserver that doesn't depend on any framework.
-- connect to Cloud CMS
-- access the "content" datastore and the "master" branch
-- query the cities in the travel guide in the sample project
-- respond to http requests with query results
+This directory contains 2 simple examples of using Cloud CMS
+
+hello.js
+    a very simple nodejs program that connects and outputs a single city on the console
+    for simplicity
+        error handling has been mostly omitted
+            if it doesn't work as expected try running app.js
+        the connection to Cloud CMS is only used once
+            see app.js for a more practical example of a persistent connection
 
 
-Requirements:
+
+app.js
+    a nodejs webserver that doesn't depend on any framework
+        - connect to Cloud CMS
+        - access the "content" datastore and the "master" branch
+        - query the cities in the travel guide in the sample project
+        - respond to http requests with query results
+
+
+___Requirements___
+
     Install Node.js
     npm install
+
+you'll need the Sample Web Site application that is created automatically when you sign up
+    if you've deleted that application, these examples won't work
+
 
 
 
 ___Credentials___
 
 
-the server needs credentials to be able to connect to Cloud CMS
-they can be provided directly as the first argument in the call to Gitana.connect (see app.js)
+the programs need credentials to be able to connect to Cloud CMS
+they can be provided directly as the first argument in the call to gitana.connect (see app.js)
 or they can be saved in a file named gitana.json in this directory
-  and Gitana.connect will read them automatically
+    and gitana.connect will read them automatically
 
 
 
@@ -30,8 +47,6 @@ Automated Method
     cloudcms init
     cloudcms connect
         choose the "Sample Web Site" that is created automatically
-            if you've deleted that application, then select another project you have created
-            or use "cloudcms create" to create a new application
         choose the default deployment
         this will generate a gitana.json
 
@@ -47,7 +62,9 @@ Manual Method
 
 
 
-## To run the server
+
+
+___To run the server___
 
 node app.js
 
@@ -60,5 +77,16 @@ connect to the server using a browser at the following addresses
 it takes a few seconds for the connection with Cloud CMS to complete
   if you access the webserver during this time,
   a message instructing you to retry in a few seconds will display instead
+
+
+
+
+
+
+___To run hello.js___
+
+node hello.js
+
+
 
 

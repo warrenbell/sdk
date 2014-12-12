@@ -18,8 +18,10 @@ var server = http.createServer(function (request, response) {
     if (!br) {
         return waiting(response);
     }
-    // query the sample application in cloud cms and list all the cities in the travel guide
-    br.queryNodes({"_type": "guide:city"}).then(function () {
+    // query the sample application in cloud cms and list some of the cities in the travel guide
+    br.trap(function (err) {
+        return waiting(response,err);
+    }).queryNodes({"_type": "guide:city"}, {limit:5}).then(function () {
         response.writeHead(200, {"Content-Type": "text/plain"});
         // this is a NodeMap comprising several nodes, each of which represents a city
         var map = this;
@@ -48,7 +50,7 @@ var gitana = require("gitana");
 
 
 /** the cloudcms application helper */
-var platform = null;
+var apphelper = null;
 
 /** the cloudcms branch object */
 var br = null;
@@ -61,12 +63,13 @@ var errorMessage;
  * if the server hasn't finished connecting to CloudCMS, tell the user to try again later
  * @param res the express response object
  */
-var waiting = function(response) {
+var waiting = function(response,err) {
+    err = err || errorMessage;
     response.writeHead(500, {"Content-Type": "text/plain"});
-    if (errorMessage) {
+    if (err) {
         response.end("Could not connect to Cloud CMS, " +
             "please check your gitana.json configuration file:\n\n" +
-            JSON.stringify(errorMessage,true,2));
+            JSON.stringify(err,true,2));
         return;
     }
     response.end("Connecting to CloudCMS ... please wait and retry in a few seconds");
@@ -77,6 +80,7 @@ var waiting = function(response) {
 var trapper = function(err) {
     errorMessage = err;
     console.log("error: " + JSON.stringify(err));
+    return false;
 };
 
 
@@ -97,10 +101,10 @@ gitana.connect(credentials,function(err) {
         errorMessage = err;
         return;
     }
-    platform = this;
-    platform
-        .trap(trapper).datastore("content")
-        .trap(trapper).readBranch("master")
+    apphelper = this;
+    apphelper.datastore("content")
+        .trap(trapper)
+        .readBranch("master")
         .then(function() {
             // save the branch as a global variable so the server can use it
             br = this;

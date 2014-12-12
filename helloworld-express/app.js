@@ -55,6 +55,7 @@ var article3 = {
     body: "kludge is a word that suggests that a solution is clumsy"
 };
 
+var timeout = 30000;
 
 // create 3 nodes when the user visits /init
 app.get( "/init", function(req, res) {
@@ -64,20 +65,50 @@ app.get( "/init", function(req, res) {
 
     // is this thread-safe ???
     var num = 0;
-    var cb = function() { if (++num==3) res.render('init', {}); }
-    br.createNode(article1).then(cb);
-    br.createNode(article2).then(cb);
-    br.createNode(article3).then(cb);
+    var t1 = new Date();
+    var times = [];
+    var cb = function() {
+        times.push(new Date()-t1);
+        if (++num==3) {
+            res.render('init', {times: times});
+            clearTimeout(tid);
+        }
+        if (num > 4) console.log('long running /init connection ... ' + JSON.stringify(times));
+    };
+    var tid = setTimeout(function() {
+        var msg = 'connection timed out, times: ' + JSON.stringify(times);
+        res.render('waiting', {timeout:msg});
+        num = 4;
+        console.log(msg);
+    },timeout);
+    br.trap(reqTrap).createNode(article1).then(cb);
+    br.trap(reqTrap).createNode(article2).then(cb);
+    br.trap(reqTrap).createNode(article3).then(cb);
 });
+
+
+
+
+
+
 
 // query all the nodes that have been created
 app.get( "/", function(req, res) {
     if (!br) {
         return waiting(res);
     }
-    br.queryNodes({example:skey}).then(function () {
-        var obj = {map:this};
-        res.render('index', obj);
+    var tid = setTimeout(function() {
+        var msg = 'connection timed out';
+        res.render('waiting', {timeout:msg});
+        console.log(msg);
+        tid = null;
+    },timeout);
+    br.trap(reqTrap).queryNodes({example:skey}).then(function () {
+        if (tid !== null) {
+            clearTimeout(tid);
+            var obj = {map: this};
+            res.render('index', obj);
+        }
     });
 });
 
@@ -86,10 +117,19 @@ app.get( "/teardown", function(req, res) {
     if (!br) {
         return waiting(res);
     }
-    br.queryNodes({example:skey}).then(function () {
+    var tid = setTimeout(function() {
+        var msg = 'connection timed out';
+        res.render('waiting', {timeout:msg});
+        console.log(msg);
+        tid = null;
+    },timeout);
+    br.trap(reqTrap).queryNodes({example:skey}).then(function () {
         var num = this.__size();
         this.del().then(function() {
-            res.render('teardown', {num:num});
+            if (tid !== null) {
+                clearTimeout(tid);
+                res.render('teardown', {num:num});
+            }
         });
     });
 });
@@ -101,6 +141,23 @@ app.get( "/teardown", function(req, res) {
 var waiting = function(res) {
     res.render('waiting',{err:errorMessage});
 };
+
+
+/** an error handler for chain traps */
+var trapper = function(err) {
+    errorMessage = err;
+    console.log("error: " + JSON.stringify(err));
+    return false;
+};
+
+/** and error handler for trapping chains during http request processing */
+var reqTrap = function (err) {
+    console.log("error during service: " + JSON.stringify(err));
+    return waiting(response,err);
+};
+
+
+
 
 
 /**
@@ -123,7 +180,9 @@ gitana.connect(credentials,function(err) {
         return;
     }
     platform = this;
-    platform.datastore("content").readBranch("master")
+    platform.datastore("content")
+        .trap(trapper)
+        .readBranch("master")
         .then(function() {
             br = this;
             var msg = JSON.stringify(this);

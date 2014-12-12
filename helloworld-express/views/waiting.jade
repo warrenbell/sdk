@@ -5,6 +5,10 @@ block content
         h1 Disconnected
         p Could not connect to Cloud CMS, please check your gitana.json configuration file:
             pre= JSON.stringify(err,true,2)
+    else if (timeout)
+        h1 Timeout Exceeded
+        p Commands sent to Cloud CMS are taking longer than expected to complete
+            pre= JSON.stringify(timeout,true,2)
     else
         h1 Connecting
         p Connecting to CloudCMS ... please wait and retry in a few seconds
