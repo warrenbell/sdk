@@ -7,6 +7,10 @@ It's a nodejs webserver using the express framework.
 - create, query and delete nodes in that branch
 - respond to http requests with query results
 
+it attempts to write meaningful diagnostic messages to the console
+    so it may be useful in helping to diagnose a connection that is not working
+
+
 
 ## Requirements
     Install Node.js
