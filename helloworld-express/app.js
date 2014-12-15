@@ -1,16 +1,20 @@
-/*
-
-A simple nodejs/express server that demonstrates
-  connecting to CloudCMS
-  creating nodes
-  querying nodes
-  deleting nodes
-
-See the README in this directory for instructions on running
-
+/**
+ * Hello World (Express)
+ *
+ * This Hello World example improves upon the basic Hello World project (in a different directory) by using Express
+ * to host a simple web server application.  The web application offers three functions:
+ *
+ *    a) Create 3 content items
+ *    b) Query for content items and display them
+ *    c) Delete content items
+ *
+ * The purpose of this project is to get a better sense of the CRUD operations that Cloud CMS supports.  We can not
+ * only query for content, but we can also create it, delete it and work with it in result sets.
+ *
+ * Jade is used as a templating engine and Express is kept in a pretty minimal configuration.
+ *
+ * See the README.md file for more information.
  */
-
-
 
 var express = require('express');
 var path = require('path');
@@ -24,199 +28,93 @@ app.set('view engine', 'jade');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-/** the cloudcms application helper */
-var platform = null;
-
-/** the cloudcms branch object */
-var br = null;
-
-/** error message returned by Gitana.connect, if any */
-var errorMessage;
-
-/** a common attribute for all nodes that are created to enable easy querying */
-var skey = "helloworld";
-
 // some articles relating to programming
-var article1 = {
-    example: skey,
-    title: "hello world",
-    body: "hello world is a simple program that demonstrates a roundtrip."
-};
-var article2 = {
-    example: skey,
-    title: "foobar",
-    body: "foobar is a common placeholder name for a variable."
-};
-var article3 = {
-    example: skey,
-    title: "kludge",
-    body: "kludge is a word that suggests that a solution is clumsy"
-};
+var article1 = require("./content/article1.json");
+var article2 = require("./content/article2.json");
+var article3 = require("./content/article3.json");
 
-var timeout = 30000;
+// connect to Cloud CMS
+// this looks for gitana.json in local directory
+gitana.connect(function(err) {
 
-// create 3 nodes when the user visits /init
-app.get( "/init", function(req, res) {
-    if (!br) {
-        return waiting(res);
-    }
-
-    // is this thread-safe ???
-    var num = 0;
-    var t1 = new Date();
-    var times = [];
-    var cb = function() {
-        times.push(new Date()-t1);
-        if (++num==3) {
-            res.render('init', {times: times});
-            clearTimeout(tid);
-        }
-        if (num > 4) console.log('long running /init connection ... ' + JSON.stringify(times));
-    };
-    var tid = setTimeout(function() {
-        var msg = 'connection timed out, times: ' + JSON.stringify(times);
-        res.render('waiting', {timeout:msg});
-        num = 4;
-        console.log(msg);
-    },timeout);
-    br.trap(reqTrap).createNode(article1).then(cb);
-    br.trap(reqTrap).createNode(article2).then(cb);
-    br.trap(reqTrap).createNode(article3).then(cb);
-});
-
-
-
-
-
-
-
-// query all the nodes that have been created
-app.get( "/", function(req, res) {
-    if (!br) {
-        return waiting(res);
-    }
-    var tid = setTimeout(function() {
-        var msg = 'connection timed out';
-        res.render('waiting', {timeout:msg});
-        console.log(msg);
-        tid = null;
-    },timeout);
-    br.trap(reqTrap).queryNodes({example:skey}).then(function () {
-        if (tid !== null) {
-            clearTimeout(tid);
-            var obj = {map: this};
-            res.render('index', obj);
-        }
-    });
-});
-
-// delete the nodes that have been created
-app.get( "/teardown", function(req, res) {
-    if (!br) {
-        return waiting(res);
-    }
-    var tid = setTimeout(function() {
-        var msg = 'connection timed out';
-        res.render('waiting', {timeout:msg});
-        console.log(msg);
-        tid = null;
-    },timeout);
-    br.trap(reqTrap).queryNodes({example:skey}).then(function () {
-        var num = this.__size();
-        this.del().then(function() {
-            if (tid !== null) {
-                clearTimeout(tid);
-                res.render('teardown', {num:num});
-            }
-        });
-    });
-});
-
-/**
- * if the server hasn't finished connecting to CloudCMS, tell the user to try again later
- * @param res the express response object
- */
-var waiting = function(res) {
-    res.render('waiting',{err:errorMessage});
-};
-
-
-/** an error handler for chain traps */
-var trapper = function(err) {
-    errorMessage = err;
-    console.log("error: " + JSON.stringify(err));
-    return false;
-};
-
-/** and error handler for trapping chains during http request processing */
-var reqTrap = function (err) {
-    console.log("error during service: " + JSON.stringify(err));
-    return waiting(response,err);
-};
-
-
-
-
-
-/**
- * credentials to be used to connect to cloudcms
- * if null, the file gitana.json in this directory is used instead
- */
-var credentials = null;
-
-
-
-// Connect to Cloud CMS
-//
-// By default, this loads config from the gitana.json in the application root.
-// Or you can pass in the config as a json object as the first argument
-gitana.connect(credentials,function(err) {
-    // if we were unable to connect, send back an error
     if (err) {
-        console.log("error during Gitana.connect: " + JSON.stringify(err));
-        errorMessage = err;
-        return;
+        console.log("");
+        console.log("There was a problem connecting to Cloud CMS");
+        console.log(err);
+        process.exit();
     }
-    platform = this;
-    platform.datastore("content")
-        .trap(trapper)
-        .readBranch("master")
-        .then(function() {
-            br = this;
-            var msg = JSON.stringify(this);
-            console.log(msg);
+
+    // read the master branch
+    this.datastore("content").readBranch("master").then(function() {
+
+        // bind controllers
+        bindControllers(this, app);
+
+        // start web server
+        app.set('port', process.env.PORT || 3000);
+        var server = app.listen(app.get('port'), function() {
+            console.log("");
+            console.log("---------------------------------------------------------");
+            console.log("Hello World (Express) is alive and kicking!");
+            console.log("");
+            console.log("   To create sample content, go to http://localhost:" + server.address().port + "/setup");
+            console.log("   To cleanup sample content, go to http://localhost:" + server.address().port + "/teardown");
+            console.log("   To view sample content, go to http://localhost:" + server.address().port + "/");
+            console.log("");
         });
-});
 
 
-
-
-
-
-// catch 404
-app.use(function(req, res, next) {
-    res.render('error', {
-        message: "Not Found",
-        error: {status:404, stack:""}
     });
 });
 
-// error handlers
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: err
+var bindControllers = function(branch, app)
+{
+    app.get("/setup", function(req, res) {
+        Chain(branch).then(function() {
+            this.createNode(article1);
+            this.createNode(article2);
+            this.createNode(article3);
+        }).then(function() {
+            res.render("setup", {
+                "nodes": [article1, article2, article3]
+            });
+        });
     });
-});
 
+    app.get("/teardown", function(req, res) {
+        Chain(branch).queryNodes({
+            "example": "helloworld"
+        }).del().then(function() {
+            res.render("teardown", {
+                "nodes": this.asArray()
+            });
+        });
+    });
 
-// start a webserver
-app.set('port', process.env.PORT || 3000);
-var server = app.listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + server.address().port);
-});
+    app.get("/", function(req, res) {
+        Chain(branch).queryNodes({
+            "example": "helloworld"
+        }).then(function() {
+            res.render("index", {
+                "nodes": this.asArray()
+            });
+        });
+    });
 
+    // catch 404
+    app.use(function(req, res, next) {
+        res.render('error', {
+            message: "Page not found!",
+            error: {status:404, stack:""}
+        });
+    });
 
+    // error handlers
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+};

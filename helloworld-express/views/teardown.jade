@@ -1,7 +1,10 @@
 extends layout
 
 block content
-    h1!= "Article Deletion"
-    p all #{num} articles have been deleted
-    if (num > 0)
-        p Hello World - you've successfully created and deleted nodes
+    h1!= "Tear down Content Items"
+    p We deleted #{nodes.length} content items.
+    p The following content items were deleted:
+    ul
+      each node in nodes
+        li= node.title
+

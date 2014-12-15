@@ -1,73 +1,19 @@
-# Cloud CMS Hello World using Express framework
+# Hello World (Express)
 
-This directory contains a simple example of using Cloud CMS.
-It's a nodejs webserver using the express framework.
-- connect to Cloud CMS
-- access the "content" datastore and the "master" branch
-- create, query and delete nodes in that branch
-- respond to http requests with query results
+This Hello World example improves upon the basic Hello World project (in a different directory) by using Express
+to host a simple web server application.  The web application offers three functions:
 
-it attempts to write meaningful diagnostic messages to the console
-    so it may be useful in helping to diagnose a connection that is not working
+    a) Create 3 content items
+    b) Query for content items and display them
+    c) Delete content items
 
+The purpose of this project is to get a better sense of the CRUD operations that Cloud CMS supports.  We can not
+only query for content, but we can also create it, delete it and work with it in result sets.
 
+Jade is used as a templating engine and Express is kept in a pretty minimal configuration.
 
-## Requirements
-    Install Node.js
-    npm install
+If you're new to Node.js or Express, please take a look at the /helloworld example first.  This is covered in much
+more detail here:
 
-
-
-
-## Credentials
-
-the server needs credentials to be able to connect to Cloud CMS
-they can be provided directly as the first argument in the call to Gitana.connect (see app.js)
-or they can be saved in a file named gitana.json in this directory
-  and Gitana.connect will read them automatically
-
-
-
-Automated Method
-
-    npm install -g cloudcms-cli
-    cloudcms init
-    cloudcms connect
-        choose the "Sample Web Site" that is created automatically
-            if you've deleted that application, then select another project you have created
-            or use "cloudcms create" to create a new application
-        choose the default deployment
-        this will generate a gitana.json
-
-Manual Method
-    visit http://__tenant__.cloudcms.net/#/developers
-    where __tenant__ is the domain that you signed up with
-    click "gitana.json"
-    highlight and copy the json
-    and save it as a file named "gitana.json" in this directory
-        alternatively, you can paste it into app.js and assign it to the variable credentials
-
-
-
-
-
-## To run the server
-
-node app.js
-
-
-
-connect to the server using a browser at the following addresses
-    http://localhost:3000/init
-      - create some nodes in Cloud CMS
-    http://localhost:3000
-      - query all nodes that have been created
-    http://localhost:3000/teardown
-      - delete the nodes that have been created
-
-
-it takes a few seconds for the connection with Cloud CMS to complete
-  if you access the webserver during this time,
-  a message instructing you to retry in a few seconds will display instead
-
+     https://www.cloudcms.com/helloworld.html
 
