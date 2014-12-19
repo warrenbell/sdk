@@ -1,0 +1,36 @@
+# Hello World
+
+This directory provides a simple browser application that connects to the Cloud CMS Sample Project on your
+tenant and pulls back a list of repositories.
+
+You can use this project as a way to test out a simple HTML web page connecting to Cloud CMS.
+
+## Sample #1 (index.html)
+
+The first sample connects to Cloud CMS using a local proxy.  The proxy is started using Grunt and the
+Grunt Connect proxy module.  The proxy starts up at the /proxy URI.  Any URL that starts with /proxy will be forwarded
+to the api.cloudcms.com server.  The proxy allows your web app to provide a "same domain" endpoint for XHR/Ajax
+connections that originate in the browser.
+
+In production, you will likely want to use Apache or Nginx as a production proxy.
+
+## Sample #2 (index-using-appserver.html)
+
+The Cloud CMS hosted application tier (*.cloudcms.net) is a cluster of web-facing servers that Cloud CMS runs in the
+cloud to provide application server support to your browser-based application.  You can connect to this to have
+your client key and client secret automatically provisioned to your app.
+
+This sample requires only the URL of your hosted application which you can get by deploying your application to the
+Cloud CMS hosting tier.  Once you have this URL, plug it in to the HTML source to connect.
+
+## How to launch the web server
+
+Simply do:
+
+    npm install
+    npm start
+
+And then point your browser to:
+
+    http://localhost:3000/index.html
+    http://localhost:3000/index-using-appserver.html

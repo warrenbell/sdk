@@ -1,0 +1,8 @@
+{
+  "name": "helloworld-browser",
+  "version": "0.0.1",
+  "dependencies": {
+    "gitana": "*",
+    "jquery": "*"
+  }
+}

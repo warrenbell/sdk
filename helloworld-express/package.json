@@ -8,6 +8,6 @@
   "dependencies": {
     "express": "~4.9.0",
     "jade": "~1.6.0",
-    "gitana": "~1.0.120"
+    "gitana": "*"
   }
 }

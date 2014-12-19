@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Cloud CMS Example (using CORS to Hosted)</title>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/gitana/dist/gitana.js"></script>
+        <script>
+            Gitana.connect({
+                "baseURL": "https://{domain}.cloudcms.net/proxy",
+                "application": ""
+            }, function(err) {
+                
+                this.platform().queryRepositories().then(function() {
+                    $("textarea").append(JSON.stringify(this, null, "  "));
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Cloud CMS Example (using CORS against Hosted Tier)</h1>
+        <div id="result"></div>
+        <div>
+            <textarea cols="120" rows="50" style="font-family: Courier"></textarea>
+        </div>
+    </body>
+</html>
