@@ -12,6 +12,7 @@
     "prestart": "bower install",
     "start": "grunt server"
   },
+  "private": true,
   "engines": {
     "node": ">=0.10.0"
   }
