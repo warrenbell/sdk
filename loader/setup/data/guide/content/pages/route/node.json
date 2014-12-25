@@ -1,9 +1,0 @@
-{
-    "_type": "wcm:page",
-    "title": "Guide - Route",
-    "_qname": "guide:page-route",
-    "uris": [
-        "/guide/route.html"
-    ],
-    "template": "/templates/route.html"
-}
