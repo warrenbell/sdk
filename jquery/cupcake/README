@@ -1,0 +1,40 @@
+# jQuery Example - Show a Cupcake
+
+This directory provides a simple HTML web page that displays a cupcake from the sample project.
+
+While this example does not use Node.js at runtime, it does use Node.js for tooling and so you will need to install
+Node.js to build things.
+
+To try out this example:
+
+1.  Edit the public/js/sample.js file to include your API keys.
+2.  Run the following:
+
+    npm install
+    npm start
+
+3.  Open a browser to:
+
+    http://localhost:3000
+
+That's it!
+
+Notes:
+
+This example sets up a proxy server located at /proxy.  The proxy server simply chunnels requests from the locally
+running server over to http://api.cloudcms.com.  By using /proxy, your requests do not go cross-domain and you avoid
+many of the issues associated with cross-domain access within browser running applications.
+
+In your own production apps, you will need to solve for CORS (cross domain) yourself.  This is usually done within
+an Apache or Nginx server configuration.  For the purposes of this sample, we provide a simple local web server
+to make this work for you.
+
+Some browsers, such as Chrome, will not persist cookies properly if you're using localhost.  For those browsers, you
+may need to use an alternate host name (which you can generally set by editing your /etc/hosts file).  For example,
+you might map testserver to 127.0.0.1 and then access the running sample at:
+
+    http://testserver:3000
+
+For more information, visit:
+
+    https://www.cloudcms.com/developers.html

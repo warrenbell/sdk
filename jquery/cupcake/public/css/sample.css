@@ -1,0 +1,21 @@
+body
+{
+
+}
+
+table.products tr td
+{
+    padding: 10px;
+}
+
+table.products tr td.preview img
+{
+    width: 128px;
+    height: 128px;
+    border-radius: 8px;
+}
+
+table.products tr td.info
+{
+    vertical-align: top;
+}

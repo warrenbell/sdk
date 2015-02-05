@@ -1,0 +1,8 @@
+{
+    "name": "cloudcms-jquery-cupcake",
+    "private": true,
+    "dependencies": {
+        "jquery": "1.x",
+        "gitana": "*"
+    }
+}

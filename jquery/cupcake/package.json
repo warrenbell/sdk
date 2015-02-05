@@ -1,0 +1,17 @@
+{
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "bower": "*",
+        "gulp": "*",
+        "nodemon": "*",
+        "express": "4.8.5",
+        "http-proxy": "*"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "postinstall": "./node_modules/.bin/bower install --config.interactive=false -F --allow-root",
+        "postupdate": "./node_modules/.bin/bower update --config.interactive=false -F --allow-root",
+        "start": "./node_modules/.bin/gulp default"
+    }
+}
