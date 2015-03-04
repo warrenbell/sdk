@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Cloud CMS Example (using a Proxy)</title>
+  <script src="bower_components/gitana/dist/gitana.js"></script>
+  <script src="bower_components/angularjs/dist/gitana.js"></script>
+  <script>
+      Gitana.connect({
+          "clientKey": "54f27409-d728-4093-b16a-f6f42d8dd6ff",
+          "clientSecret": "qJ3xN9d/WmGsgofnSp2KHrE9lKbnpWP1jlA/HdZL9meBzjVQNZSBsWjxePeURJw4/7I/VWAHEdQOCDc+WhW+Imuni9oyEl0xjVk++LIjpZ0=",
+          "username": "44d5859a-c495-4d80-9dec-1cbccccdf971",
+          "password": "h6+0nyZWAIqBiBu/+4oUcu8XZt8FJCNZFoyptUoVd6bLGTQaNkbOQltWISrNTrHHB/h6SOYyeLuIyHfB3njSOJpupX8425oTtkdDqYFOlC4=",
+          "baseURL": "/proxy",
+          "application": "f9f39a0298514e087461"
+      }, function(err) {
+          this.datastore('content')
+              .readBranch('master')
+              .queryNodes({
+                  "_type":"catalog:product"
+                  //"_type": {
+                      //"$regex":".*catalog"
+                  //}
+              }).each(function (item) {
+                  console.log(this.getTitle())
+                  $("textarea").append(JSON.stringify(this, null, "  "));
+              });
+          //.then(function() {
+              //$("textarea").append(JSON.stringify(this, null, "  "));
+          //});
+      });
+  </script>
+</head>
+<body ng-app="hello-cloudcms-angular">
+  <h1>Cloud CMS Example (using Proxy)</h1>
+  <div id="result"></div>
+  <div>
+    <textarea cols="120" rows="50" style="font-family: Courier"></textarea>
+  </div>
+</body>
+</html>
