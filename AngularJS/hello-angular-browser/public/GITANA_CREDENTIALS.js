@@ -8,3 +8,5 @@ CONNECTION_CREDENTIALS = {
     "baseURL": "/proxy",
     "application": ""
 };
+
+REPOSITORY = "";
