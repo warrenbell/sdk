@@ -60,14 +60,15 @@
         <div class="ng-cloak" ng-controller="StoreCtrl as store">
             <div class="notifications">{{ store.notification }}</div>
             <ul class="container ">
-                <li class="col-xs-12 col-sm-6 col-md-3" ng-repeat="cupcake in store.cupcakes">
+               <!--TODO make this a directive -->
+                <li class="col-xs-12 col-sm-6 col-md-3" ng-repeat="node in store.nodes">
                     <div class="item">
-                        <div style="background-image:url({{ store.getImageUri(cupcake) }})" class="item-title-container">
-                            <h4 class="item-title">{{ cupcake.name }}</h2>
+                        <div style="background-image:url({{ store.getImageUri(node) }})" class="item-title-container">
+                            <h4 class="item-title">{{ node.name }}</h2>
                         </div>
                         <div class="item-footer">
-                            <p class="item-footer-headline">{{ cupcake.headline}}</p>
-                            <p>{{ cupcake.summary }}</p>
+                            <p class="item-footer-headline">{{ node.headline}}</p>
+                            <p>{{ node.summary }}</p>
                         </div>
                     </div>
                 </li>
@@ -76,7 +77,7 @@
     </section>
     <script src="bower_components/gitana/dist/gitana.js"></script>
     <script src="bower_components/angularjs/angular.js"></script>
-    <script src="credentials.js"></script>
+    <script src="GITANA_CREDENTIALS.js"></script>
     <script src="app/controllers.js"></script>
 </body>
 </html>
