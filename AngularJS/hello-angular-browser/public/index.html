@@ -1,40 +1,82 @@
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Cloud CMS Example (using a Proxy)</title>
-  <script src="bower_components/gitana/dist/gitana.js"></script>
-  <script src="bower_components/angularjs/dist/gitana.js"></script>
-  <script>
-      Gitana.connect({
-          "clientKey": "54f27409-d728-4093-b16a-f6f42d8dd6ff",
-          "clientSecret": "qJ3xN9d/WmGsgofnSp2KHrE9lKbnpWP1jlA/HdZL9meBzjVQNZSBsWjxePeURJw4/7I/VWAHEdQOCDc+WhW+Imuni9oyEl0xjVk++LIjpZ0=",
-          "username": "44d5859a-c495-4d80-9dec-1cbccccdf971",
-          "password": "h6+0nyZWAIqBiBu/+4oUcu8XZt8FJCNZFoyptUoVd6bLGTQaNkbOQltWISrNTrHHB/h6SOYyeLuIyHfB3njSOJpupX8425oTtkdDqYFOlC4=",
-          "baseURL": "/proxy",
-          "application": "f9f39a0298514e087461"
-      }, function(err) {
-          this.datastore('content')
-              .readBranch('master')
-              .queryNodes({
-                  "_type":"catalog:product"
-                  //"_type": {
-                      //"$regex":".*catalog"
-                  //}
-              }).each(function (item) {
-                  console.log(this.getTitle())
-                  $("textarea").append(JSON.stringify(this, null, "  "));
-              });
-          //.then(function() {
-              //$("textarea").append(JSON.stringify(this, null, "  "));
-          //});
-      });
-  </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud CMS AngularJS Example (using a Proxy)</title>
+    <style>
+        /* TODO: move me to a separate file */
+        .container {
+            width: 100%;
+        }
+        .item {
+            list-style-type: none;
+            overflow: hidden;
+            margin-bottom:15px;
+            border-radius: 10px;
+            border: 1px solid gray;
+        }
+        .item-title-container {
+            height:260px;
+            width:260px;
+            background-image:url(https://placekitten.com/g/260/260)
+        }
+        .item-title {
+            position: absolute;
+            z-index: 1;
+            padding: 5px 10px;
+            color: black;
+            text-shadow: -1px -1px 0px white,
+                          1px  1px 1px white,
+                         -1px  1px 1px white,
+                          1px -1px 1px white;
+            font-weight: bold;
+        }
+        .item-image {
+            height:300px;
+            position:absolute;
+        }
+        .item-footer {
+            height:210px;
+            padding:10px;
+        }
+        .item-footer-headline {
+            padding: 5px;
+            background-color: rgb(216, 216, 216);
+            border-radius: 10px;
+        }
+
+        .ng-cloak {
+            display:none;
+        }
+    </style>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
-<body ng-app="hello-cloudcms-angular">
-  <h1>Cloud CMS Example (using Proxy)</h1>
-  <div id="result"></div>
-  <div>
-    <textarea cols="120" rows="50" style="font-family: Courier"></textarea>
-  </div>
+<body ng-app="helloCloudcms">
+    <header>
+        <h1>Cloud CMS Example (using Proxy)</h1>
+    </header>
+    <section>
+        <div class="ng-cloak" ng-controller="StoreCtrl as store">
+            <div class="notifications">{{ store.notification }}</div>
+            <ul class="container ">
+                <li class="col-xs-12 col-sm-6 col-md-3" ng-repeat="cupcake in store.cupcakes">
+                    <div class="item">
+                        <div style="background-image:url({{ store.getImageUri(cupcake) }})" class="item-title-container">
+                            <h4 class="item-title">{{ cupcake.name }}</h2>
+                        </div>
+                        <div class="item-footer">
+                            <p class="item-footer-headline">{{ cupcake.headline}}</p>
+                            <p>{{ cupcake.summary }}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script src="bower_components/gitana/dist/gitana.js"></script>
+    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="credentials.js"></script>
+    <script src="app/controllers.js"></script>
 </body>
 </html>
