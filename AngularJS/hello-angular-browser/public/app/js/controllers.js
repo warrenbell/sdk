@@ -1,16 +1,9 @@
-// instantiate this application's module
-var helloCloudcms = angular.module("helloCloudcms", []);
+// =================================
+// DECLARATION OF CONTROLLER
+// =================================
 
-// this will hold the promise of a connection to the gitana server.
-var gitanaConnected;
-
-// connect to cloudCMS.  CONNECTION_CREDENTIALS is a global stored to
-// separate credentials from this file (./public/GITANA_CREDENTIALS.js). For demo purposes only.
-// You should not make credentials available to the browser directly
-// in production.
-gitanaConnected = Gitana.connect(CONNECTION_CREDENTIALS);
-
-helloCloudcms.controller("StoreCtrl", function ($scope) {
+angular.module('helloCloudcms.controllers')
+.controller("NodeListCtrl", function ($scope, gitanaConnected) {
     // a reference to the scope of the controller for use in callbacks below.
     // (alternatively we could use $scope.)
     var self = this;
@@ -20,8 +13,8 @@ helloCloudcms.controller("StoreCtrl", function ($scope) {
      */
     this.nodes = [];
 
-    // using the promise we created above, we can chain requests to CloudCMS
-    // that should happen asynchronously -- after authentication has (hopefully) succeeded.
+    // using the promise we created just before we declared our app, we can chain requests to CloudCMS
+    // that happen asynchronously -- after authentication has (hopefully) succeeded.
     gitanaConnected.then(function () {
         // REPOSITORY is a global stored in ./public/GITANA_CREDENTIALS.js.  Add a reference to your repository.
         // TODO: change this to a string reference?  e.g. 'content' like datastore('content') or something similar?
@@ -47,6 +40,13 @@ helloCloudcms.controller("StoreCtrl", function ($scope) {
         }).then(function () {
             // clear the loading notification
             self.notification = "";
+        }, function (err) {
+            // if the query we fire fails for some reason, notify the user.
+            var errorPrefix = "Failed to load " + query + ":";
+            this.notification = errorPrefix + err.toString();
+            console.error(errorMsg, err);
+        }).then(function () {
+            // regardless of success or failure, we want to update our UI with any changes that were made
             $scope.$apply();
         });
     });

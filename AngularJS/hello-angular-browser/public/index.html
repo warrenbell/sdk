@@ -5,79 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cloud CMS AngularJS Example (using a Proxy)</title>
     <style>
-        /* TODO: move me to a separate file */
-        .container {
-            width: 100%;
-        }
-        .item {
-            list-style-type: none;
-            overflow: hidden;
-            margin-bottom:15px;
-            border-radius: 10px;
-            border: 1px solid gray;
-        }
-        .item-title-container {
-            height:260px;
-            width:260px;
-            background-image:url(https://placekitten.com/g/260/260)
-        }
-        .item-title {
-            position: absolute;
-            z-index: 1;
-            padding: 5px 10px;
-            color: black;
-            text-shadow: -1px -1px 0px white,
-                          1px  1px 1px white,
-                         -1px  1px 1px white,
-                          1px -1px 1px white;
-            font-weight: bold;
-        }
-        .item-image {
-            height:300px;
-            position:absolute;
-        }
-        .item-footer {
-            height:210px;
-            padding:10px;
-        }
-        .item-footer-headline {
-            padding: 5px;
-            background-color: rgb(216, 216, 216);
-            border-radius: 10px;
-        }
-
-        .ng-cloak {
-            display:none;
-        }
     </style>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="app/css/core.css">
 </head>
 <body ng-app="helloCloudcms">
     <header>
         <h1>Cloud CMS Example (using Proxy)</h1>
     </header>
     <section>
-        <div class="ng-cloak" ng-controller="StoreCtrl as store">
-            <div class="notifications">{{ store.notification }}</div>
-            <ul class="container ">
-               <!--TODO make this a directive -->
-                <li class="col-xs-12 col-sm-6 col-md-3" ng-repeat="node in store.nodes">
-                    <div class="item">
-                        <div style="background-image:url({{ store.getImageUri(node) }})" class="item-title-container">
-                            <h4 class="item-title">{{ node.name }}</h2>
-                        </div>
-                        <div class="item-footer">
-                            <p class="item-footer-headline">{{ node.headline}}</p>
-                            <p>{{ node.summary }}</p>
-                        </div>
-                    </div>
-                </li>
+        <div class="ng-cloak" ng-controller="NodeListCtrl as list">
+            <div class="notifications">{{ list.notification }}</div>
+            <ul class="container">
+               <gitana-node ng-repeat="node in list.nodes"></gitana-node>
             </ul>
         </div>
     </section>
+
+    <!-- INCLUDING JS -->
+    <!-- include the javascript driver that will access CloucCMS -->
     <script src="bower_components/gitana/dist/gitana.js"></script>
+
+    <!-- include AngularJS -->
     <script src="bower_components/angularjs/angular.js"></script>
+
+    <!-- the location of our credentials for the purpose of this demo. -->
     <script src="GITANA_CREDENTIALS.js"></script>
-    <script src="app/controllers.js"></script>
+
+    <!-- the declaration of our angular app (module) and declaration of its controllers module -->
+    <script src="app/js/app.js"></script>
+
+    <!-- Custom directives that simplify this application -->
+    <script src="app/js/directives.js"></script>
+
+    <!-- The controllers of our application -->
+    <script src="app/js/controllers.js"></script>
+
 </body>
 </html>

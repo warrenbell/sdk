@@ -1,0 +1,43 @@
+.container {
+    width: 100%;
+}
+.item {
+    list-style-type: none;
+    overflow: hidden;
+    margin-bottom:15px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+.item-title-container {
+    height:260px;
+    width:260px;
+    background-image:url(https://placekitten.com/g/260/260)
+}
+.item-title {
+    position: absolute;
+    z-index: 1;
+    padding: 5px 10px;
+    color: black;
+    text-shadow: -1px -1px 0px white,
+                    1px  1px 1px white,
+                    -1px  1px 1px white,
+                    1px -1px 1px white;
+    font-weight: bold;
+}
+.item-image {
+    height:300px;
+    position:absolute;
+}
+.item-footer {
+    height:210px;
+    padding:10px;
+}
+.item-footer-headline {
+    padding: 5px;
+    background-color: rgb(216, 216, 216);
+    border-radius: 10px;
+}
+
+.ng-cloak {
+    display:none;
+}
