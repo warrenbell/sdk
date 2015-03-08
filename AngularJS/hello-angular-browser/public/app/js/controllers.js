@@ -1,3 +1,4 @@
+(function () {
 // =================================
 // DECLARATION OF CONTROLLER
 // =================================
@@ -66,3 +67,4 @@ angular.module('helloCloudcms.controllers')
         return "/proxy" +  node.uri + "/attachments/default";
     };
 });
+}());

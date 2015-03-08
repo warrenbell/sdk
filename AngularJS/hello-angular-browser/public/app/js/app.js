@@ -1,3 +1,4 @@
+(function () {
 // =================================
 // INITIALIZE CONENCTION TO CLOUDCMS
 // =================================
@@ -26,8 +27,12 @@ gitanaConnected = Gitana.connect(CONNECTION_CREDENTIALS).then(
 
 // instantiate this application's module
 angular.module("helloCloudcms", ['helloCloudcms.controllers'])
+
+    // make the promise returned from authenticating with CloudCMS available
+    // to our application
     .value('gitanaConnected', gitanaConnected);
 
-// Controllers module
+// Create a module within which to declare controllers
 angular.module('helloCloudcms.controllers', []);
 
+}());
