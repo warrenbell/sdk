@@ -4,6 +4,7 @@
   "dependencies": {
     "gitana": "*",
     "jquery": "*",
+    "bootstrap": "*",    
     "angularjs": "~1.3.14"
   }
 }
