@@ -19,14 +19,14 @@
         // that happen asynchronously -- after authentication has (hopefully) succeeded.
         cloudcms.connect().then(function(holder) {
             var gitana = holder.gitana;
-        
+
             // "content" is a repository allocated to this Cloud CMS application's stack
             gitana.datastore("content")
-            .trap(function(err) { 
+            .trap(function(err) {
                 // if anything downstream on this chain throws, this trap function will catch it
                 // notify the user through a notification.
                 self.notification = "Could not connect to CloudCMS: " + err.message;
-                $scope.$apply();            
+                $scope.$apply();
                 return false;
             })
             .readBranch("master")

@@ -5,10 +5,10 @@
 // =================================
 
 // instantiate this application's module
-angular.module("helloCloudcms", ['helloCloudcms.controllers', 'helloCloudcms.services']);
+angular.module("helloCloudcms", ['helloCloudcms.services']);
 
 // Create a module within which to declare controllers
-angular.module('helloCloudcms.controllers', []);
+//angular.module('helloCloudcms.controllers', []);
 
 // Create a module within which to declare services
 angular.module('helloCloudcms.services', []);

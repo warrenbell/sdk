@@ -1,14 +1,14 @@
 (function () {
 
     angular.module('helloCloudcms.services').service("cloudcms", function($log, $q) {
-       
+
         // =================================
         // INITIALIZE CONNECTION TO CLOUDCMS
         // =================================
-        
+
         var service = {};
         service.connect = function() {
-                
+
             var deferred = $q.defer();
 
             // connect to cloudCMS.  CONNECTION_CREDENTIALS is a global stored to
@@ -34,8 +34,8 @@
 
             return deferred.promise;
         };
-        
-        return service;        
+
+        return service;
     });
 
 }());

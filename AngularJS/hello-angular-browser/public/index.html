@@ -13,13 +13,8 @@
     <header>
         <h1>Cloud CMS Example (using Proxy)</h1>
     </header>
-    <section>
-        <div class="ng-cloak" ng-controller="NodeListCtrl as list">
-            <div class="notifications">{{ list.notification }}</div>
-            <ul class="container">
-               <gitana-node ng-repeat="node in list.nodes"></gitana-node>
-            </ul>
-        </div>
+    <section class="ng-cloak">
+        <node-list></node-list>
     </section>
 
     <!-- INCLUDING JS -->
@@ -35,13 +30,13 @@
     <!-- the declaration of our angular app (module) and declaration of its controllers module -->
     <script src="app/js/app.js"></script>
 
-    <!-- Custom directives that simplify this application -->
-    <script src="app/js/directives.js"></script>
-
     <!-- The services of our application -->
     <script src="app/js/services.js"></script>
 
+    <!-- Custom directives that simplify this application -->
+    <script src="app/js/directives.js"></script>
+
     <!-- The controllers of our application -->
-    <script src="app/js/controllers.js"></script>
+    <!--<script src="app/js/controllers.js"></script>-->
 </body>
 </html>
