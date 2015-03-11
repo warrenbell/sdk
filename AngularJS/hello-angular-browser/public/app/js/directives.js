@@ -1,25 +1,42 @@
 (function () {
 angular.module('helloCloudcms')
 
-.directive('node', function () {
+.directive('gtNode', function () {
     return {
         restrict: 'E',
         templateUrl: "app/templates/gitana-node.html"
-        // TODO: move some of the logic into this directive.
     };
 })
-.directive('nodeList', ['cloudcms', function (cloudcms) {
+.directive('gtNodeList', ['cloudcms', function (cloudcms) {
     return {
         restrict: 'E',
-        require: 'node',
+        scope: {
+            // we allow the developer to specify the query that will populate node-list
+            // as an attribute of the node-list element
+            query:"@query"
+        },
         templateUrl: "app/templates/gitana-node-list.html",
         controllerAs:"list",
         controller: function ($scope, cloudcms) {
-
         // a reference to the scope of the controller for use in callbacks below.
-        // (alternatively we could use $scope.)
+        // (alternatively we could use $scope.)  <-- There's a nuance we're missing here
         var self = this;
-        var query = {"_type":"catalog:product"};
+
+        // convert the query that we extract from the element to an object
+        // note that with the cloudcms api, you don't have to do this. (try commenting
+        // the line below out (You'll also need to
+        $scope.query = JSON.parse($scope.query);
+
+        // figure out how to show what query we're loading (only because of the comment above).
+        var notificationString = angular.isObject($scope.query) ? $scope.query._type : $scope.query;
+
+        /**
+         * a string that will be written to the UI to
+         * indicate when things are going well, or poorly.
+         *
+         */
+        this.notification = "Loading " + notificationString + "...";
+
         /**
          * a collection of nodes that we will load from the server and show
          */
@@ -40,7 +57,7 @@ angular.module('helloCloudcms')
                 return false;
             })
             .readBranch("master")
-            .queryNodes(query).then(function () {
+            .queryNodes($scope.query).then(function () {
                 // nodes
                 self.nodes = this.asArray();
                 // clear the loading notification
@@ -49,13 +66,6 @@ angular.module('helloCloudcms')
                 $scope.$apply();
             });
         });
-
-        /**
-         * a string that will be written to the UI to
-         * indicate when things are going well, or poorly.
-         *
-         */
-        this.notification = "Loading " + query._type + "...";
 
         /**
          * build and return a uri referencing the default attachment image
