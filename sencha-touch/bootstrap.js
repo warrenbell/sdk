@@ -16,7 +16,8 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSet": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
-  "SenchaTouchExample": "app"
+  "SenchaTouchExample": "app",
+  "SenchaTouchExample.controller.Cupcake": "app/controller/Cupdake.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Ext.AbstractComponent": [],
@@ -639,6 +640,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
+  "SenchaTouchExample.controller.Cupcake": [],
+  "SenchaTouchExample.store.Node": [],
   "SenchaTouchExample.view.Main": []
 });
 Ext.ClassManager.addNameAliasMappings({
@@ -1359,6 +1362,8 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "SenchaTouchExample.controller.Cupcake": [],
+  "SenchaTouchExample.store.Node": [],
   "SenchaTouchExample.view.Main": [
     "widget.main"
   ]

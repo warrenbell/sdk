@@ -1,0 +1,19 @@
+{
+  "name": "hello-sencha-touch",
+  "version": "0.0.2",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.1",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-connect-proxy": "*",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "scripts": {
+    "prestart": "bower install",
+    "start": "grunt server"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

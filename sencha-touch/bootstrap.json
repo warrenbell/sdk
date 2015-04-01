@@ -4,4 +4,4 @@
  * combination of content from app.json, and all required package's package.json
  * files.  Customizations should be placed in app.json.
  */
-{"id":"14f54ef2-5185-4004-8cc1-c7ecad82d250","js":[{"path":"touch/sencha-touch.js"},{"path":"bootstrap.js"},{"path":"app.js","update":"delta"}],"css":[{"path":"resources/css/app.css","update":"delta"}]}
+{"id":"14f54ef2-5185-4004-8cc1-c7ecad82d250","js":[{"path":"touch/sencha-touch.js"},{"path":"bootstrap.js"},{"path":"app.js","update":"delta"},{"path":"bower_components/gitana/dist/gitana.js"},{"path":"GITANA_CREDENTIALS.js"}],"css":[{"path":"resources/css/app.css","update":"delta"}]}
