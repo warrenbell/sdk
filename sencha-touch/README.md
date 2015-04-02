@@ -36,6 +36,16 @@ And then point your browser to:
 
     http://localhost:3000/index.html
 
+## Cookies
+
+Some browsers have cookie-related restrictions to using localhost.  For example, Google Chrome does not persist cookies on the localhost
+domain.  If you want to see images or other static resources loaded from Cloud CMS, edit your /etc/hosts file and set an alternative
+domain name, such as:
+
+    http://testserver:3000/index.html
+    
+
+    
 ## additional notes
 normally in a production environment, credentials would be handled by a supporting server, not directly in the browser.  If you intend to use this example as a starting point, you should remove the GITANA_CREDENTIALS.js file and authenticate with CloudCMS a different way.
 
