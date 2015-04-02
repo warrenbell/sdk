@@ -10,6 +10,8 @@
     will need to resolve manually.
 */
 
+/*TODO:  if this were a real MVC style application, we would be configuring
+ * most this in controller, store, view , model.*/
 //Ext.application({
     //name: 'SenchaTouchExample',
     ////views: ['Main'],
@@ -21,14 +23,6 @@
 
         //Ext.create('SenchaTouchExample.view.Main');
 
-
-
-// connect to cloudCMS.  CONNECTION_CREDENTIALS is a global stored t
-// separate credentials from this file (./public/GITANA_CREDENTIALS.js) For demo purposes only.
-// You should not make credentials available to the browser directly
-// in production.
-
-
 Ext.application({
     name: 'GitanaExample',
 
@@ -36,18 +30,10 @@ Ext.application({
 
         var store = Ext.create('Ext.data.Store', {
             storeId: 'Store',
-            fields: ['title', 'headline', 'summary', 'body'],
-            //root: {
-                //leaf: false
-            //}
-            //proxy: {
-                //type: 'jsonp',
-                //url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://feeds.feedburner.com/SenchaBlog',
-                //reader: {
-                    //type: 'json',
-                    //rootProperty: 'responseData.feed.entries'
-                //}
-            //}
+            fields: ['title', 'headline', 'summary', 'body', 'fullImageUri'],
+            //'getUri','getRepositoryId','getBranchId','getId', 'get', ]
+            // before locally creating the uri path at store build time
+            // tried exposing methos as fields on the store.  Yikes.
         });
 
         var panel = Ext.create("Ext.tab.Panel", {
@@ -63,30 +49,66 @@ Ext.application({
                     displayField: 'title',
 
                     store: 'Store',
-                    itemTpl: '{title}',
-                    //tpl: [
-                        //'<div class="product-info-header">',
-                                //'<img src={image} width="100px" height="100px"/>',
-                                //'<h3>foobar{name}</h3>',
-                                //'<h4>Price: {price}</h4>',
-                                //'<h4>Seller: {sellerUsername}</h4>',
-                        //'</div>',
-                    //],
-                    //detailCard: {
-                        //xtype: 'panel',
-                        //scrollable: true,
-                        //styleHtmlContent: true
-                    //},
+                    itemTpl:
+                        '<div>' +
+                            '<h2 style="font-weight:bold;font-size:120%">{title}</h2>' +
+                             '<span style="font-size:90%;color:gray">{headline}</span>' +
+                        '</div>',
+                    listeners: {
 
-                    //listeners: {
+                        /**
+                         * declare an event for tapping one of the items in our list.
+                         */
+                        itemtap: function(uiList, list, index, element, node) {
+                            var popup = new Ext.Panel({
+                                fullscreen:true,
+                                centered: true,
+                                modal: true,
+                                scrollable : {
+                                    direction     : 'vertical',
+                                    directionLock : true
+                                },
+                                width: "80%",
+                                height: "90%",
+                                data: element.data, // <-- this tells the
+                                                    // template what "data"
+                                                    // to use for interpolation.
 
+                                // please forgive all the inline styles...
+                                tpl: "<div>" +
+                                        "<div style='width:100%;height:50%'>" +
+                                            "<div style='display:inline-block;padding:20px;width:296px;text-align:center'>" +
+                                                "<img src='{fullImageUri}' />" +
+                                            "</div>" +
+                                            "<div style='display:inline-block;padding:20px;width:auto'>" +
+                                                "<h1 style='font-size:220%'>{title}</h1>" +
+                                                "<h3 style='font-size:160%;color:#666'>{headline}</h3>" +
+                                            "</div>" +
+                                        "</div>" +
+                                        "<div style='height:50%'>" +
+                                            "<p style='padding:20px;font-size:120%'>{summary}</p></div>" +
+                                        "</div>" +
+                                     "</div>",
+                                items: [{
+                                    docked:'top',
+                                    xtype: 'toolbar',
+                                    items: [{
+                                        xtype: 'spacer'
+                                    },{
+                                        text: 'Close',
+                                        handler: function(){
+                                            popup.hide();
+                                        }
+                                    }]
+                                }]
+                            });
 
-                        //itemtap: function(nestedList, list, index, element, post) {
-                            //this.getDetailCard().setHtml(post.get('content'));
-                        //}
-                    //}
+                            // display the panel we just created
+                            popup.show();
+                        }
+                    }
                 },
-                // this is the new item
+                // Some demo material from sencha-touch website below. No effect.
                 {
                     title: 'Contact',
                     iconCls: 'user',
@@ -97,7 +119,7 @@ Ext.application({
                     items: [
                         {
                             xtype: 'fieldset',
-                            title: 'Contact Us',
+                            title: 'Contact Us Re: Cupcakes',
                             instructions: '(email address is optional)',
                             height: 285,
                             items: [
@@ -128,21 +150,30 @@ Ext.application({
             ]
         });
 
+
+        // connect to cloudCMS.  CONNECTION_CREDENTIALS is a global stored t
+        // separate credentials from this file (./public/GITANA_CREDENTIALS.js) For demo purposes only.
+        // You should not make credentials available to the browser directly
+        // in production.
+
         var query = {"_type":"catalog:product"};
+        // TODO: get this out of the launch method so
+        // it's running async with startup.
         Gitana.connect(CONNECTION_CREDENTIALS, function(err) {
 
             if (err) {
-                //var errorPrefix = "Failed to connect to CloudCMS:";
-                //this.notification = errorPrefix + err.toString();
-                console.log("Failed to connect to Cloud CMS: " + err);
+                console.error("Failed to connect to Cloud CMS: " + err);
                 return;
             }
 
-            // "content" is a repository allocated to this Cloud CMS application's stack
+            // "content" is a repository allocated
+            // to this Cloud CMS application's stack
             this.datastore("content")
             .trap(function(err) {
-                // if anything downstream on this chain throws, this trap function will catch it
-                console.error("Could not connect to CloudCMS: " + err.message);
+                // if anything downstream on this
+                // chain throws, this trap function will catch it
+                console.error("Could not connect to CloudCMS: " +
+                        err.message);
                 return false;
             })
             .readBranch("master")
@@ -150,12 +181,35 @@ Ext.application({
 
                 // note that since we define fields above.
                 var store = Ext.StoreMgr.get('Store');
-                console.log(store);
-                console.log(this.asArray());
-                store.add(this.asArray());
+
+                // TODO: I believe we can do something like
+                // `nodes.each(function(){});` before doing
+                // asArray() whne we send them to the
+                // sencha store.
+                var nodes = this.asArray();
+
+                // since we have some issues retaining
+                // context once these nodes are in sencha-land,
+                // we hack on a uri to the image here.
+                for(var x =0; x < nodes.length; x++) {
+                    console.log(nodes[x]);
+                    nodes[x].fullImageUri =
+                        "/proxy" +
+                        nodes[x].getUri() +
+                        "/preview/helloCloudcms_256" +
+                        "?mimetype=image/jpeg&size=256&attachment=default";
+                }
+                // here's where we return to interacting with sencha.
+                // We've executed our query and gotten a set of nodes
+                // using the Gitana driver.  Now we add those nodes
+                // to the store that we got just above this.
+                store.add(nodes);
+
+                // once we've added the nodes, we have to tell the
+                // store we're done making changes, by telling it
+                // to sync what changes we've made.
                 store.sync();
             });
-            GLOBAL = store;
         });
     }
 });
