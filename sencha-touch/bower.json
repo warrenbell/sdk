@@ -1,9 +1,8 @@
 {
   "name": "hello-sencha-touch",
+  "directory" : "application/bower_components",
   "version": "0.0.1",
   "dependencies": {
-    "gitana": "*",
-    "bootstrap": "*",
-    "angularjs": "~1.3.14"
+    "gitana": "*"
   }
 }
