@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="bs-docs-sidebar col-xs-3">
+        <h2>Cupcakes</h2>
+        <ul class="nav nav-pills nav-stacked">
+        {{#each cupcake in model}}
+            <li>
+            {{#link-to 'cupcake' cupcake }}
+                {{cupcake.title}}
+            {{/link-to}}
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+    <div class="col-xs-9">
+        {{outlet}}
+    </div>
+</div>
