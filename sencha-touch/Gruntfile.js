@@ -15,10 +15,10 @@ module.exports = function (grunt) {
           middleware: function (connect) {
             return [
               require('grunt-connect-proxy/lib/utils').proxyRequest,
-              connect.static('public'),
+              connect.static('./application'),
               connect().use(
                 '/bower_components',
-                connect.static('./bower_components')
+                connect.static('./application/bower_components')
               )
             ];
           }
@@ -41,8 +41,7 @@ module.exports = function (grunt) {
     watch: {
       server: {
         files: [
-            'public/index.html',
-            'public/index-using-appserver.html'
+            '/index.html'
         ]
       }
     }
