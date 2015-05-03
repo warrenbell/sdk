@@ -7,12 +7,6 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
-
-app.import('bower_components/gitana/dist/gitana.js');
-
-app.import('vendor/cloudcms/GITANA_CREDENTIALS.js');
-
-app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
 //
 // Use `app.import` to add additional libraries to the generated
 // output files.
@@ -26,5 +20,11 @@ app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
+
+
+app.import('bower_components/gitana/dist/gitana.js');
+
+app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
+
 
 module.exports = app.toTree();

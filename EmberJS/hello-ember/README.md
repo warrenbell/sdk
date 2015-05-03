@@ -2,7 +2,34 @@
 
 This folder contains a simple starter app using Ember JS -- build through the ember-cli utility.
 
+## File structure
+within the ember app, these are the specific files that were modified in order to integrate the CloudCMS driver:
+<pre>
+    |-- app
+    |   |-- adapters
+    |   |   `-- cupcake.js
+    |   |-- app.js
+    |   |-- models
+    |   |   `-- cupcake.js
+    |   |-- router.js
+    |   |-- routes
+    |   |   |-- cupcake.js
+    |   |   `-- cupcakes.js
+    |   |-- templates
+    |   |   |-- application.hbs
+    |   |   |-- cupcake.hbs
+    |   |   `-- cupcakes.hbs
+    |-- Brocfile.js
+    |-- public
+    |   |-- assets
+    |   |   `--cloudcms
+    |   |      `-- GITANA_CREDENTIALS.js
+    |-- README.md
+    |-- server
+        `-- proxies
+            `-- proxy.js
 
+</pre>
 
 ## Prerequisites
 
@@ -20,25 +47,7 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200/cupcakes).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
+* Visit your app at [http://localhost:4200](http://localhost:4200/).
 
 ## Further Reading / Useful Links
 
