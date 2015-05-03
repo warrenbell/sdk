@@ -1,38 +1,35 @@
 # CloudCMS Hello-Ember
 
-This folder contains a simple starter app using Ember JS -- build using [ember-cli](http://www.ember-cli.com/)
+This folder contains a simple starter app using Ember JS -- build through the ember-cli utility.
 
-## filesystem structure:
-These are the files that were modified from the base ember-cli setup to connect to CloudCMS
+## File structure
+within the ember app, these are the specific files that were modified in order to integrate the CloudCMS driver:
+<pre>
+    |-- app
+    |   |-- adapters
+    |   |   `-- cupcake.js
+    |   |-- app.js
+    |   |-- models
+    |   |   `-- cupcake.js
+    |   |-- router.js
+    |   |-- routes
+    |   |   |-- cupcake.js
+    |   |   `-- cupcakes.js
+    |   |-- templates
+    |   |   |-- application.hbs
+    |   |   |-- cupcake.hbs
+    |   |   `-- cupcakes.hbs
+    |-- Brocfile.js
+    |-- public
+    |   |-- assets
+    |   |   `--cloudcms
+    |   |      `-- GITANA_CREDENTIALS.js
+    |-- README.md
+    |-- server
+        `-- proxies
+            `-- proxy.js
 
-    |-- hello-ember
-        |-- Brocfile.js
-        |-- README.md
-        |-- app
-        |   |-- adapters
-        |   |   |-- cupcake.js
-        |   |
-        |   |-- app.js
-        |   |-- index.html
-        |   |-- models
-        |   |   |-- cupcake.js
-        |   |
-        |   |-- router.js
-        |   |-- routes
-        |   |   |-- cupcake.js
-        |   |   |-- cupcakes.js
-        |   |
-        |   |-- templates
-        |   |   |-- application.hbs
-        |   |   |-- components
-        |   |   |-- cupcake.hbs
-        |   |   |-- cupcakes.hbs
-        |   |
-        |-- bower.json
-        |-- server
-            |-- index.js
-            |-- proxies
-                |-- proxy.js
+</pre>
 
 ## Prerequisites
 
