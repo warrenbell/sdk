@@ -17,4 +17,4 @@ In terms of getting started, please visit:
 This page provides an entry point in terms of what you need to know as a developer of Cloud CMS.  It covers API Keys,
 connecting and more.
 
-Enjoy!
+Enjoy! Changed
