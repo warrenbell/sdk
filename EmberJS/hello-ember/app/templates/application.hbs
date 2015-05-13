@@ -1,9 +1,18 @@
 <div class="container">
-    <div class="row navbar navbar-default">
-        <h2 class="navbar-brand navbar-header" id="title">CloudCMS EmberJS integration example</h2>
-        <ul class="nav navbar-nav">
-        </ul>
-    </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-brand navbar-header" id="title">CloudCMS EmberJS integration example</div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    {{#link-to "cupcakes" tagName="li" href=false}}
+                    <a {{bind-attr href="view.href"}}>
+                        Cupakes
+                    </a>
+                    {{/link-to}}
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="row">
         {{outlet}}
     </div>
