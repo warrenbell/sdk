@@ -1,8 +1,38 @@
 # CloudCMS Hello-Ember
 
-This folder contains a simple starter app using Ember JS -- build through the ember-cli utility.
+This folder contains a simple starter app using Ember JS -- build using [ember-cli](http://www.ember-cli.com/)
 
+## filesystem structure:
+These are the files that were modified from the base ember-cli setup to connect to CloudCMS
 
+    |-- hello-ember
+        |-- Brocfile.js
+        |-- README.md
+        |-- app
+        |   |-- adapters
+        |   |   |-- cupcake.js
+        |   |
+        |   |-- app.js
+        |   |-- index.html
+        |   |-- models
+        |   |   |-- cupcake.js
+        |   |
+        |   |-- router.js
+        |   |-- routes
+        |   |   |-- cupcake.js
+        |   |   |-- cupcakes.js
+        |   |
+        |   |-- templates
+        |   |   |-- application.hbs
+        |   |   |-- components
+        |   |   |-- cupcake.hbs
+        |   |   |-- cupcakes.hbs
+        |   |
+        |-- bower.json
+        |-- server
+            |-- index.js
+            |-- proxies
+                |-- proxy.js
 
 ## Prerequisites
 
@@ -20,25 +50,8 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200/cupcakes).
+* Visit your app at [http://localhost:4200/](http://localhost:4200/).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
